@@ -1,2 +1,2 @@
 # RHS
-Rental House Advisor System
+Rental House System
