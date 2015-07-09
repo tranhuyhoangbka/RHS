@@ -30,3 +30,9 @@ h1 {
 #my-header {
   background: #1D568E;
 }
+
+html, body, #map-canvas {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
