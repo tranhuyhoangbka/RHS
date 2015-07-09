@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       as: :user_omniauth_upgrade
     get "/users/auth/:provider/setup", to: "omniauth_callbacks#setup"
   end
+  resources :addresses
 end
