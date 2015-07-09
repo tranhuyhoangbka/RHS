@@ -28,6 +28,7 @@ end
 
 group :development, :test do
   gem "sqlite3"
+  gem "mysql2"
   gem "byebug"
   gem "web-console"
   gem "spring"

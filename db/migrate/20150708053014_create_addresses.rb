@@ -8,7 +8,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :description
       t.integer :type
       t.string :address
-      t.float :rate
+      t.float :rating
 
       t.references :user, index: true, foreign_key: true
       t.timestamps null: false
