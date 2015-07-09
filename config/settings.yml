@@ -1,3 +1,5 @@
 roles:
   admin: 1
   normal: 0
+provider:
+  google: "google_oauth2"
