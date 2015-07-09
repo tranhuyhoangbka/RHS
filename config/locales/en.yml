@@ -22,3 +22,11 @@
 en:
   hello: "Hello world"
   app_name: "Rental House System"
+  login: "Login"
+  register: "Register"
+  home: "Home"
+  back: "Back"
+  you_sure: "You are sure?"
+  can_account: "Cancel account"
+  uphappy: "Unhappy?"
+  edit: "Edit"
