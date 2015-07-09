@@ -3,3 +3,4 @@ roles:
   normal: 0
 provider:
   google: "google_oauth2"
+  facebook: "facebook"

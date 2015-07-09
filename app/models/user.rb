@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :omniauthable
-
   has_many :addresses, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -22,5 +21,13 @@ class User < ActiveRecord::Base
         refresh_token: google_oauth2.refreshtoken})
     end
     @google_oauth2_client
+  end
+    
+  def facebook
+    identities.where(provider: "facebook").first
+  end
+
+  def facebook_client
+    @facebook_client ||= Facebook.client access_token: facebook.accesstoken
   end
 end
