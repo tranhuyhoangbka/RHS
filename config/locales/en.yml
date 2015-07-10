@@ -30,3 +30,7 @@ en:
   can_account: "Cancel account"
   uphappy: "Unhappy?"
   edit: "Edit"
+  forgot_password: "Forgot your password?"
+  confirm_instructions: "Didn't receive confirmation instructions?"
+  unlock_instructions: "Didn't receive unlock instructions?"
+  sign_in_with_google: "Sign in with google"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708064143) do
+ActiveRecord::Schema.define(version: 20150709030457) do
 
   create_table "addresses", force: :cascade do |t|
     t.float    "lon",         limit: 24
@@ -39,6 +39,24 @@ ActiveRecord::Schema.define(version: 20150708064143) do
 
   add_index "comments", ["review_id"], name: "index_comments_on_review_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "identities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "accesstoken"
+    t.string   "refreshtoken"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "email"
+    t.string   "nickname"
+    t.string   "image"
+    t.string   "phone"
+    t.string   "urls"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id"
 
   create_table "reviews", force: :cascade do |t|
     t.string   "content",    limit: 255

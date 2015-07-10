@@ -83,6 +83,10 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dotenv (2.0.2)
+    dotenv-rails (2.0.2)
+      dotenv (= 2.0.2)
+      railties (~> 4.0)
     erubis (2.7.0)
     excon (0.45.3)
     execjs (2.5.2)
@@ -93,6 +97,8 @@ GEM
       railties (>= 3.0.0)
     faker (1.4.3)
       i18n (~> 0.5)
+    faraday (0.9.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.10)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -122,7 +128,7 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (0.7.0)
+    fog-aws (0.7.2)
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
@@ -207,6 +213,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    hashie (3.4.2)
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.0)
@@ -218,9 +225,10 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    jwt (1.5.1)
     launchy (2.4.3)
       addressable (~> 2.3)
-    listen (3.0.1)
+    listen (3.0.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     loofah (2.0.2)
@@ -234,6 +242,8 @@ GEM
     mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.2)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
     mysql2 (0.3.18)
     nenv (0.2.0)
     net-scp (1.2.1)
@@ -244,6 +254,21 @@ GEM
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    oauth2 (1.0.0)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+    omniauth-google-oauth2 (0.2.6)
+      omniauth (> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-oauth2 (1.3.1)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.18.2)
     polyamorous (1.2.0)
@@ -299,6 +324,7 @@ GEM
     rb-fsevent (0.9.5)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    rdoc (4.2.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rspec (3.3.0)
@@ -329,6 +355,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    sdoc (0.4.1)
+      json (~> 1.7, >= 1.7.7)
+      rdoc (~> 4.0)
     shellany (0.0.1)
     slop (3.6.0)
     spring (1.3.6)
@@ -373,15 +402,18 @@ DEPENDENCIES
   carrierwave
   coffee-rails
   devise
+  dotenv-rails
   factory_girl_rails
   faker
   fog
   guard-rspec
-  jbuilder
+  jbuilder (~> 2.0)
   jquery-rails
   launchy
   mini_magick
   mysql2
+  omniauth
+  omniauth-google-oauth2
   pg
   puma
   rails (= 4.2.1)
@@ -391,9 +423,13 @@ DEPENDENCIES
   ratyrate
   rspec-rails
   sass-rails
+  sdoc (~> 0.4.0)
   spring
   sqlite3
   turbolinks
   uglifier
   web-console
   will_paginate
+
+BUNDLED WITH
+   1.10.5
