@@ -1,4 +1,6 @@
 class AddressesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_address, only: [:show, :edit, :destroy]
 
   def index
     @addresses = Address.all
@@ -25,6 +27,11 @@ class AddressesController < ApplicationController
 
   private
   def address_params
-    params.require(:address).permit :lon, :lat, :capacity, :contact, :description, :type
+    params.require(:address).permit :lon, :lat, :capacity, :contact, 
+      :description, :type
+  end
+
+  def set_address
+    @address = Address.find params[:id]
   end
 end
