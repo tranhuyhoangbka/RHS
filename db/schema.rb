@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20150709030457) do
     t.string   "description", limit: 255
     t.integer  "type",        limit: 4
     t.string   "address",     limit: 255
-    t.float    "rating",   limit: 24
+    t.float    "rating",      limit: 24
     t.integer  "user_id",     limit: 4
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false

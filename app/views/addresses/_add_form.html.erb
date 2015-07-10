@@ -1,0 +1,24 @@
+<%= form_for @address do |f| %>
+  <p>
+    <%= f.label :latitude %><br />
+    <%= f.text_field :lat, id: "form-lat" %>
+  </p>
+  <p>
+    <%= f.label :longitude %><br />
+    <%= f.text_field :lon, id: "form-lon" %>
+  </p>
+  <p>
+    <%= f.label :capacity %><br />
+    <%= f.text_field :capacity %>
+  </p>
+  <p>
+    <%= f.label :contact %><br />
+    <%= f.text_field :contact %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+
+  <p><%= f.submit %></p>
+<% end %>
