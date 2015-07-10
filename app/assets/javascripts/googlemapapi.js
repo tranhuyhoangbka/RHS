@@ -1,17 +1,24 @@
+$(document).ready(function(){
+  $('#mylocation').click(function(){
+    geoLocation();
+  })
+})
+
+var map;
 var infowindow = new google.maps.InfoWindow({
-  size: new google.maps.Size(150,50)});
+  size: new google.maps.Size(150, 50)});
 
 function initialize() {
-  var myLatlng = new google.maps.LatLng(20.919650305632143, 106.63326752187459);
-  var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
-
+  var myLatlng = new google.maps.LatLng(21.017030, 105.783902);
   var image = "/assets/pin.png";
   var myOptions = {
-    zoom: 16,
+    zoom: 13,
     center: myLatlng,
     mapTypeControl: true,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
+
+  map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
 
   var marker = new google.maps.Marker({
     position: myLatlng,
@@ -24,7 +31,6 @@ function initialize() {
   formlng = document.getElementById("form-lon").value = myLatlng.lng();
 
   var defaultBounds = new google.maps.LatLngBounds(
-    new google.maps.LatLng(20.919650305632143, 106.63326752187459),
     new google.maps.LatLng(20.919650305632143, 106.63326752187459));
   map.fitBounds(defaultBounds);
 
@@ -32,8 +38,7 @@ function initialize() {
     document.getElementById("pac-input"));
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-  var searchBox = new google.maps.places.SearchBox(
-    (input));
+  var searchBox = new google.maps.places.SearchBox((input));
   google.maps.event.addListener(searchBox, "places_changed", function() {
     var places = searchBox.getPlaces();
 
@@ -45,16 +50,8 @@ function initialize() {
     }
     var bounds = new google.maps.LatLngBounds();
     for (var i = 0, place; place = places[i]; i++) {
-      var image = {
-        url: place.icon,
-        size: new google.maps.Size(10, 10),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(16, 16)
-      };
       var marker = new google.maps.Marker({
         map: map,
-        icon: image,
         title: place.name,
         position: place.geometry.location
       });
@@ -88,3 +85,24 @@ function initialize() {
     formlng = document.getElementById("form-lon").value = event.latLng.lng();
   });
 }
+
+function geoLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    alert("No Gelocation Support!");
+  }
+}
+
+function showPosition(position) {
+  geolocate = new google.maps.LatLng(position.coords.latitude,
+                                     position.coords.longitude);
+  var marker = new google.maps.Marker({
+    map: map,
+    position: geolocate,
+    icon: "/assets/geo.png"
+  });
+
+  map.setCenter(geolocate);
+}
+

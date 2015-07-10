@@ -101,3 +101,21 @@ html, body{
   margin-top: 60px;
   padding: 5px;
 }
+
+#mylocation {
+  background-size: cover;
+  width: 120px;
+  height: 32px;
+  position: absolute;
+  bottom: 7%;
+  right: 5%;
+}
+
+.info {
+  display: none;
+}
+
+#mylocation:hover .info {
+  display: block;
+  color: blue;
+}
