@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "static_pages#home"
+  root "addresses#index"
 
   devise_for :users, class_name: "FormUser",
     controllers: {omniauth_callbacks: "omniauth_callbacks",
@@ -10,5 +10,6 @@ Rails.application.routes.draw do
       as: :user_omniauth_upgrade
     get "/users/auth/:provider/setup", to: "omniauth_callbacks#setup"
   end
+
   resources :addresses
 end

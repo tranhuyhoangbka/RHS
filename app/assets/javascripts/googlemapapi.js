@@ -106,3 +106,27 @@ function showPosition(position) {
   map.setCenter(geolocate);
 }
 
+function gmap_show_addresses(addresses) {
+  for (var i = 1; i < addresses.length; i++) {
+    var position = new google.maps.LatLng(
+      addresses[i].lat,
+      addresses[i].lon);
+    var marker = new google.maps.Marker({
+      position: position,
+      map: map
+    });
+
+    marker.setTitle((i + 1).toString());
+    attachSecretMessage(marker, i);
+  }
+}
+
+function attachSecretMessage(marker, num) {
+  var infowindow = new google.maps.InfoWindow({
+    content: addresses[num].description
+  });
+
+  google.maps.event.addListener(marker, "click", function() {
+    infowindow.open(marker.get("map"), marker);
+  });
+}
