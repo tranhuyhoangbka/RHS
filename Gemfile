@@ -8,8 +8,7 @@ gem "cancancan"
 gem "ransack"
 gem "rails_config"
 gem "bcrypt"
-gem "will_paginate"
-gem "bootstrap-will_paginate"
+gem "kaminari"
 gem "sass-rails"
 gem "bootstrap-sass"
 gem "uglifier"
@@ -22,6 +21,7 @@ gem "sdoc", "~> 0.4.0", group: :doc
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
+gem "rails_admin", github: "sferik/rails_admin"
 
 group :development, :test do
   gem "dotenv-rails"
