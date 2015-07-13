@@ -25,21 +25,21 @@ gem "rails_admin", github: "sferik/rails_admin"
 
 group :development, :test do
   gem "dotenv-rails"
-  gem "capybara"
-  gem "guard-rspec"
-  gem "launchy"
-  gem "sqlite3"
   gem "mysql2"
-  gem "byebug"
+  gem "pry"
   gem "web-console"
   gem "spring"
   gem "faker"
   gem "factory_girl_rails"
+end
+
+group :test do
+  gem "capybara"
+  gem "launchy"
+  gem "guard-rspec"
   gem "rspec-rails"
 end
 
 group :production do
-  gem "pg"
-  gem "rails_12factor"
-  gem "puma"
+  gem "unicorn"
 end
