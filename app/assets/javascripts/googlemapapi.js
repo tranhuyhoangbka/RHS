@@ -5,11 +5,12 @@ $(document).ready(function(){
 })
 
 var map;
+var myLatlng;
 var infowindow = new google.maps.InfoWindow({
   size: new google.maps.Size(150, 50)});
 
 function initialize() {
-  var myLatlng = new google.maps.LatLng(21.017030, 105.783902);
+  myLatlng = new google.maps.LatLng(21.017030, 105.783902);
   var image = "/assets/pin.png";
   var myOptions = {
     zoom: 13,
@@ -19,7 +20,9 @@ function initialize() {
   }
 
   map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+}
 
+function marker(){
   var marker = new google.maps.Marker({
     position: myLatlng,
     map: map,
@@ -97,6 +100,7 @@ function geoLocation() {
 function showPosition(position) {
   geolocate = new google.maps.LatLng(position.coords.latitude,
                                      position.coords.longitude);
+
   var marker = new google.maps.Marker({
     map: map,
     position: geolocate,
