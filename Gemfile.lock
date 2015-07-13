@@ -470,6 +470,3 @@ DEPENDENCIES
   uglifier
   unicorn
   web-console
-
-BUNDLED WITH
-   1.10.5

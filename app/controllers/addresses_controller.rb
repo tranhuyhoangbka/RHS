@@ -4,6 +4,7 @@ class AddressesController < ApplicationController
 
   def index
     @addresses = Address.all
+    @address = Address.new
   end
 
   def show
@@ -19,7 +20,7 @@ class AddressesController < ApplicationController
     @address = Address.new address_params
     respond_to do |format|
       if @address.save
-        format.html {redirect_to @address, notice: t("address.create")}
+        format.html {redirect_to root_path, notice: t("address.create")}
       else
         format.html {render :new}
       end

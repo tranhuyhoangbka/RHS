@@ -39,3 +39,12 @@ en:
     local: "Your location"
     search: "Search"
     holder: "Enter address here"
+  address:
+    latitude: "Latitude"
+    longitude: "Longitude"
+    capacity: "Capacity"
+    contact: "Contact"
+    description: "Description"
+    new:
+      name: "Create New Address"
+      button: "Create New Address"
