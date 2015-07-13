@@ -11,6 +11,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     generic_callback Settings.provider.twitter
   end
 
+  def linkedin
+    generic_callback Settings.provider.linkedin
+  end
+
   def generic_callback provider
     @identity = Identity.find_for_oauth env["omniauth.auth"]
     @user = @identity.user || current_user

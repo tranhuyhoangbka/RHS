@@ -21,8 +21,9 @@ gem "sdoc", "~> 0.4.0", group: :doc
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
-gem "rails_admin", github: "sferik/rails_admin"
 gem "omniauth-twitter"
+gem "omniauth-linkedin" 
+gem "rails_admin", github: "sferik/rails_admin"
 
 group :development, :test do
   gem "dotenv-rails"

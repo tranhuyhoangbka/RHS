@@ -16,8 +16,10 @@ Devise.setup do |config|
 
   # config.omniauth :facebook, "1602034476748977", "f3c99f203cd7529a61050735d91fd2af", scope: "email"
   config.omniauth :facebook, ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_APP_SECRET"], scope: "email"
-  # config.omniauth :facebook, "2F4SsVCkDbHD97SA0qdUum6si", "KBOxVc45NBdWgb5L4HBNzyUwXK26giC0gyZEcuOdcoGGgYWr3B", scope: "email"
-  config.omniauth :twitter, ENV["TWITTER_APP_ID"], ENV["TWITTER_APP_SECRET"], scope: "email"
+  # config.omniauth :twitter, "2F4SsVCkDbHD97SA0qdUum6si", "KBOxVc45NBdWgb5L4HBNzyUwXK26giC0gyZEcuOdcoGGgYWr3B", scope: "email"
+  config.omniauth :twitter, ENV["TWITTER_APP_ID"], ENV["TWITTER_APP_SECRET"]
+  # config.omniauth :linkedin, "757kfq72wf4pbt", "kVhZPcn9TxiMqwyc", scope: "email"
+  config.omniauth :linkedin, ENV["LINKEDIN_APP_ID"], ENV["LINKEDIN_APP_SECRET"]
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
 
