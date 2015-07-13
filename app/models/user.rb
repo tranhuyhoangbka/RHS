@@ -38,4 +38,12 @@ class User < ActiveRecord::Base
   def twitter_client
     @twitter_client ||= Twitter.client access_token: twitter.accesstoken
   end
+
+  def linkedin
+    identities.where(provider: Settings.provider.linkedin).first
+  end
+
+  def linkedin_client
+    @linkdin_client ||= Linkedin.client access_token: linkedin.accesstoken
+  end
 end

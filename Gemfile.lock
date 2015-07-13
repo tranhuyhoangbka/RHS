@@ -294,6 +294,8 @@ GEM
     omniauth-google-oauth2 (0.2.6)
       omniauth (> 1.0)
       omniauth-oauth2 (~> 1.1)
+    omniauth-linkedin (0.2.0)
+      omniauth-oauth (~> 1.0)
     omniauth-oauth (1.1.0)
       oauth
       omniauth (~> 1.0)
@@ -448,10 +450,9 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
-  pry
+  omniauth-linkedin
   omniauth-twitter
-  pg
-  puma
+  pry
   rails (= 4.2.1)
   rails_admin!
   rails_config
