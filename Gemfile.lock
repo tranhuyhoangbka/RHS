@@ -279,6 +279,7 @@ GEM
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    oauth (0.4.7)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
@@ -293,9 +294,15 @@ GEM
     omniauth-google-oauth2 (0.2.6)
       omniauth (> 1.0)
       omniauth-oauth2 (~> 1.1)
+    omniauth-oauth (1.1.0)
+      oauth
+      omniauth (~> 1.0)
     omniauth-oauth2 (1.3.1)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
+    omniauth-twitter (1.2.0)
+      json (~> 1.3)
+      omniauth-oauth (~> 1.1)
     orm_adapter (0.5.0)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
@@ -442,6 +449,9 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   pry
+  omniauth-twitter
+  pg
+  puma
   rails (= 4.2.1)
   rails_admin!
   rails_config
@@ -455,3 +465,6 @@ DEPENDENCIES
   uglifier
   unicorn
   web-console
+
+BUNDLED WITH
+   1.10.4
