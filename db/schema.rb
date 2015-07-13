@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20150709030457) do
 
   create_table "addresses", force: :cascade do |t|
-    t.float    "lon",         limit: 24
+    t.float    "lng",         limit: 24
     t.float    "lat",         limit: 24
     t.integer  "capacity",    limit: 4
     t.string   "contact",     limit: 255
