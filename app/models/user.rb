@@ -24,10 +24,18 @@ class User < ActiveRecord::Base
   end
     
   def facebook
-    identities.where(provider: "facebook").first
+    identities.where(provider: Settings.provider.facebook).first
   end
 
   def facebook_client
     @facebook_client ||= Facebook.client access_token: facebook.accesstoken
+  end
+
+  def twitter
+    identities.where(provider: Settings.provider.twitter).first
+  end
+
+  def twitter_client
+    @twitter_client ||= Twitter.client access_token: twitter.accesstoken
   end
 end

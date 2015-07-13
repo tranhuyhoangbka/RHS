@@ -22,6 +22,7 @@ gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
 gem "rails_admin", github: "sferik/rails_admin"
+gem "omniauth-twitter"
 
 group :development, :test do
   gem "dotenv-rails"

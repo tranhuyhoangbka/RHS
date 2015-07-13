@@ -4,3 +4,4 @@ roles:
 provider:
   google: "google_oauth2"
   facebook: "facebook"
+  twitter: "twitter"
