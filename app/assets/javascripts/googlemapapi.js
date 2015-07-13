@@ -117,20 +117,25 @@ function gmap_show_addresses(addresses) {
       addresses[i].lon);
     var marker = new google.maps.Marker({
       position: position,
-      map: map
+      map: map,
+      id: addresses[i].id
     });
-
     marker.setTitle((i + 1).toString());
     attachSecretMessage(marker, i);
   }
 }
 
 function attachSecretMessage(marker, num) {
-  var infowindow = new google.maps.InfoWindow({
-    content: addresses[num].description
-  });
-
   google.maps.event.addListener(marker, "click", function() {
-    infowindow.open(marker.get("map"), marker);
+    $.fancybox({
+      "type" : "iframe",
+      "href" : gethost() +"/addresses/"+ addresses[num].id,
+      "overlayShow" : true,
+      "centerOnScroll" : true,
+      "speedIn" : 100,
+      "speedOut" : 50,
+      "width" : "80%",
+      "height" : "80%"
+    });    
   });
 }
