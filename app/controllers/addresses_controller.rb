@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
   before_action :set_address, only: [:show, :edit, :destroy]
 
   def index
@@ -27,7 +27,7 @@ class AddressesController < ApplicationController
 
   private
   def address_params
-    params.require(:address).permit :lon, :lat, :capacity, :contact, 
+    params.require(:address).permit :lon, :lat, :capacity, :contact,
       :description, :type
   end
 
