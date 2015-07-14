@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_address, only: [:show, :edit, :destroy]
 
   def index
@@ -8,6 +8,7 @@ class AddressesController < ApplicationController
 
   def show
     @address = Address.find params[:id]
+    render layout: "address"
   end
 
   def new

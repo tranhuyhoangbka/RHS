@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require googlemapapi
 //= require bootstrap
+//= require fancybox
+//= require gethost
