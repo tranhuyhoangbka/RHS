@@ -29,7 +29,7 @@ class AddressesController < ApplicationController
 
   private
   def address_params
-    params.require(:address).permit :lon, :lat, :capacity, :contact,
+    params.require(:address).permit :lng, :lat, :capacity, :contact,
       :description, :type
   end
 
