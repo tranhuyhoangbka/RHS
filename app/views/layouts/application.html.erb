@@ -10,6 +10,7 @@
 <body onLoad="initialize()">
   <%= render "layouts/header" %>
   <%= yield %>
+  <%= render "layouts/signin" %>
 </body>
 </html>
 <% if user_signed_in? %>

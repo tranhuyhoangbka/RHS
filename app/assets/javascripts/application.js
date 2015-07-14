@@ -25,3 +25,9 @@ $(document).ready(function(){
       getElementById("new_address_view").style.display="block";
   }
 });
+
+function onClick(){
+  $("body").on("hidden.bs.modal", ".modal", function () {
+    $(this).removeData("bs.modal");
+  });
+}
