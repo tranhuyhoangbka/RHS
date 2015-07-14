@@ -20,10 +20,6 @@ function initialize() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
   map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
-}
-
-function marker(){
-  var marker = new google.maps.Marker({
   marker = new google.maps.Marker({
     position: myLatlng,
     map: map,

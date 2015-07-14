@@ -1,28 +1,28 @@
 <%= form_for @address do |f| %>
   <div class="col-md-12 well">
-    <div class="col-md-12">
+    <div class="col-md-12" style="display: none">
       <%= f.label t "address.latitude" %>
       <%= f.text_field :lat, class: "form-control", id: "form-lat" %>
     </div>
 
-    <div class="col-md-12">
+    <div class="col-md-12" style="display: none">
       <%= f.label t "address.longitude" %><br/>
-      <%= f.text_field :lon, class: "form-control", id: "form-lon" %>
+      <%= f.text_field :lng, class: "form-control", id: "form-lng" %>
     </div>
 
     <div class="col-md-12">
       <%= f.label t "address.capacity" %><br/>
-      <%= f.text_field :capacity, class: "form-control", id: "form-lon" %>
+      <%= f.text_field :capacity, class: "form-control" %>
     </div>
 
     <div class="col-md-12">
       <%= f.label t "address.contact" %><br/>
-      <%= f.text_field :contact, class: "form-control", id: "form-lon" %>
+      <%= f.text_field :contact, class: "form-control" %>
     </div>
 
     <div class="col-md-12">
       <%= f.label t "address.description" %><br/>
-      <%= f.text_field :description, class: "form-control", id: "form-lon" %>
+      <%= f.text_field :description, class: "form-control" %>
     </div>
   </div>
   <div class="col-md-12 well">
