@@ -15,7 +15,7 @@
 //= require custom
 //= require bootstrap
 //= require fancybox
-//= require gethost
+//= require custom
 
 $(document).ready(function(){
   $("#myModalName").html($("#new_address").data("name"));

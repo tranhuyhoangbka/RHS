@@ -1,4 +1,4 @@
-<%= form_for @address do |f| %>
+<%= form_for @address, html: {multipart: true} do |f| %>
   <div class="col-md-12 well">
     <div class="col-md-12" style="display: none">
       <%= f.label t "address.latitude" %>

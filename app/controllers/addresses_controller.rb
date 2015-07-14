@@ -14,6 +14,7 @@ class AddressesController < ApplicationController
 
   def new
     @address = Address.new
+    @image = @address.images.build
   end
 
   def create
@@ -23,14 +24,14 @@ class AddressesController < ApplicationController
         format.html {redirect_to root_path, notice: t("address.create")}
       else
         format.html {render :new}
-      end
+      end      
     end
   end
 
   private
   def address_params
-    params.require(:address).permit :lng, :lat, :capacity, :contact,
-      :description, :type
+    params.require(:address).permit :id, :lng, :lat, :capacity, :contact,
+      :description, :type, images_attributes: [:id, :photo, :_destroy]
   end
 
   def set_address
