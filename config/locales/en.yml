@@ -48,3 +48,11 @@ en:
     new:
       name: "Create New Address"
       button: "Create New Address"
+  directions:
+    travel_mode: "Mode of travel"
+    driving: "DRIVING"
+    walking: "WALKING"
+    bicycling: "BICYCLING"
+    transit: "TRANSIT"
+    total_distance: "Total Distance"
+    kilometer: " Km"
