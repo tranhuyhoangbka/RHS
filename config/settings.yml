@@ -9,3 +9,7 @@ provider:
 directional:
   address:
     new: "Create New Address"
+image_sample:
+  - /app/assets/images/house1.jpg
+  - /app/assets/images/house2.jpg
+  - /app/assets/images/house3.jpg
