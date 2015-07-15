@@ -1,13 +1,7 @@
-<script type="text/javascript">
-  window._rails_env = "<%= Rails.env %>"
+<%= render "shared/filter" %>
+<h1>Main Content</h1>
 
-  var addresses = <%= @addresses.to_json.html_safe %>
-  google.maps.event.addDomListener(window, "load", function(){
-    gmap_show_addresses(addresses)});
-</script>
+<% content_for :right do %>
+  <h1>Right content</h1>
+<% end %>
 
-
-<div id="map-canvas"></div>
-<%= render "shared/current_location" %>
-<%= render "shared/search" %>
-<%= render "shared/button" %>
