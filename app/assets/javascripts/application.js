@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require googlemapapi
+//= require custom
 //= require bootstrap
 //= require fancybox
 //= require gethost
