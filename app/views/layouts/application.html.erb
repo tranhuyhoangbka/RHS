@@ -7,13 +7,13 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= render "shared/navbar" %>
-
+    <div id="header_wrapper">
+      <%= render "shared/header" %>
+    </div>
     <div class="main-container">
       <div class="row">
-        <%= render "shared/header" %>
+        <%= render "shared/navbar" %>
       </div>
-
       <div class="row">
         <div class="col-md-8">
           <%= yield %>
