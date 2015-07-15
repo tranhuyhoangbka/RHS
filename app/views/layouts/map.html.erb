@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t "app_name" %></title>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body onLoad="initialize()">
+  <%= render "layouts/header" %>
+  <%= yield %>
+  <%= render "layouts/signin" %>
+</body>
+</html>
+<% if user_signed_in? %>
+  <%= render "shared/modal_form" %>
+<% end %>
