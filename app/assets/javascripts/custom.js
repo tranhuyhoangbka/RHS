@@ -7,69 +7,63 @@ $(document).ready(function(){
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
-var myLatlng;
 var geolocate;
 var geo_marker = null;
-var infowindow = new google.maps.InfoWindow({
-  size: new google.maps.Size(150, 50)});
+var infowindow = new google.maps.InfoWindow({size: new google.maps.Size(150, 50)});
 
 function initialize() {
-  myLatlng = new google.maps.LatLng(21.017030, 105.783902);
-  var markers = [];
+  var myLatlng = new google.maps.LatLng(21.017030, 105.783902);
+  var lat = document.getElementById("form-lat");
+  var lng = document.getElementById("form-lng");
+  var input = document.getElementById("pac-input");
   var image = "/assets/pin.png";
-  var myOptions = {
+  var markers = [];
+  var option = {
     zoom: 13,
     center: myLatlng,
     mapTypeControl: true,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
-  map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
-
-  marker = new google.maps.Marker({
-    position: myLatlng,
-    map: map,
-    icon: image,
-    title: "Property Location"
-  });
 
   directionsDisplay = new google.maps.DirectionsRenderer();
   directionsDisplay.setMap(map)
 
-  formlat = document.getElementById("form-lat").value = myLatlng.lat();
-  formlng = document.getElementById("form-lng").value = myLatlng.lng();
+  map = new google.maps.Map(document.getElementById("map-canvas"), option);
+  var marker;
 
-  var defaultBounds = new google.maps.LatLngBounds(
-    new google.maps.LatLng(20.9102, 105.7759),
-    new google.maps.LatLng(21.217030, 105.793902));
-  map.fitBounds(defaultBounds);
-
-  var input = (document.getElementById("pac-input"));
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   var searchBox = new google.maps.places.SearchBox((input));
+
   google.maps.event.addListener(searchBox, "places_changed", function() {
     var places = searchBox.getPlaces();
-    if (places.length == 0) {
+
+    if (places.length === 0) {
       return;
     }
+
     for (var i = 0, marker; marker = markers[i]; i++) {
       marker.setMap(null);
     }
+
     markers = [];
     var bounds = new google.maps.LatLngBounds();
+
     for (var i = 0, place; place = places[i]; i++) {
-      var image = "/assets/pin.png";
       var marker = new google.maps.Marker({
         map: map,
         icon: image,
         title: place.name,
         position: place.geometry.location
       });
+
       markers.push(marker);
       bounds.extend(place.geometry.location);
     }
+
     map.fitBounds(bounds);
   });
+
   google.maps.event.addListener(map, "bounds_changed", function() {
     var bounds = map.getBounds();
     searchBox.setBounds(bounds);
@@ -84,15 +78,18 @@ function initialize() {
       marker.setMap(null);
       marker = null;
     }
-    var myLatLng = event.latLng ;
+
+    myLatLng = event.latLng;
+
     marker = new google.maps.Marker({
       position: myLatLng,
       map: map,
       icon: image,
       title:"Property Location"
     });
-    formlat = document.getElementById("form-lat").value = event.latLng.lat();
-    formlng = document.getElementById("form-lng").value = event.latLng.lng();
+
+    lat.value = event.latLng.lat();
+    lng.value = event.latLng.lng();
   });
 }
 
