@@ -4,6 +4,8 @@ $(document).ready(function(){
   });
 });
 
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
 var map;
 var myLatlng;
 var geolocate;
@@ -29,6 +31,9 @@ function initialize() {
     icon: image,
     title: "Property Location"
   });
+
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  directionsDisplay.setMap(map)
 
   formlat = document.getElementById("form-lat").value = myLatlng.lat();
   formlng = document.getElementById("form-lng").value = myLatlng.lng();
@@ -128,6 +133,11 @@ function gmap_show_addresses(addresses) {
     });
     marker.setTitle((i + 1).toString());
     attachSecretMessage(marker, i);
+    var infowindow = new google.maps.InfoWindow({
+      content: "<button onclick = \"calcRoute(" + addresses[i].lat + "," +
+        addresses[i].lng + ")\">Directions</button>"
+    });
+    infowindow.open(map, marker);
   }
 }
 
@@ -144,4 +154,31 @@ function attachSecretMessage(marker, num) {
       "height" : "80%"
     });
   });
+}
+
+function calcRoute(target_lat, target_lng) {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var lat = position.coords.latitude;
+      var lng = position.coords.longitude;
+      var start = new google.maps.LatLng(lat, lng);
+      var end = new google.maps.LatLng(target_lat, target_lng);
+      var selectedMode = document.getElementById("travel-mode").value;
+      var request = {
+        origin:start,
+        destination:end,
+        travelMode: google.maps.TravelMode[selectedMode]
+      };
+      directionsService.route(request, function(result, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(result);
+          var dis = result.routes[0].legs[0].distance.value;
+          document.getElementById("distance").innerHTML = dis/1000;
+        }
+      });
+      document.getElementById("mode").style.visibility = "visible";
+    });
+  } else {
+    alert("No Gelocation Support!");
+  }
 }

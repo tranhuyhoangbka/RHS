@@ -166,3 +166,17 @@ html, body{
     height: 80px;
   }
 }
+
+#mode {
+  visibility: hidden;
+  position: absolute;
+  right: 5%;
+  top: 45%;
+  background-color: #69B9E6;
+  border-radius: 5px;
+  padding: 6px 14px;
+}
+
+#mode p {
+  text-align: center;
+}
