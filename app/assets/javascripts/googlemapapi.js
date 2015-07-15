@@ -6,13 +6,15 @@ $(document).ready(function(){
 
 var map;
 var myLatlng;
+var geolocate;
+var geo_marker = null;
 var infowindow = new google.maps.InfoWindow({
   size: new google.maps.Size(150, 50)});
 
 function initialize() {
   myLatlng = new google.maps.LatLng(21.017030, 105.783902);
-  var image = "/assets/pin.png";
   var markers = [];
+  var image = "/assets/pin.png";
   var myOptions = {
     zoom: 13,
     center: myLatlng,
@@ -20,11 +22,12 @@ function initialize() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
   map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+
   marker = new google.maps.Marker({
     position: myLatlng,
     map: map,
     icon: image,
-    title:"Property Location"
+    title: "Property Location"
   });
 
   formlat = document.getElementById("form-lat").value = myLatlng.lat();
@@ -100,11 +103,15 @@ function showPosition(position) {
   geolocate = new google.maps.LatLng(position.coords.latitude,
                                      position.coords.longitude);
 
-  var marker = new google.maps.Marker({
-    map: map,
-    position: geolocate,
-    icon: "/assets/geo.png"
-  });
+  if(geo_marker == null){
+    geo_marker = new google.maps.Marker({
+      map: map,
+      position: geolocate,
+      icon: "/assets/geo.png"
+    });
+  } else {
+    geo_marker.setPosition(geolocate);
+  }
 
   map.setCenter(geolocate);
 }
