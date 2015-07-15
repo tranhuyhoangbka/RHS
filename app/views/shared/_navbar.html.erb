@@ -1,26 +1,19 @@
-<header class="navbar navbar-fixed-top" id="my-header">
-  <div class="container">
-    <div class="dropdown">
-      <button class="btn dropdown-toggle glyphicon
-        glyphicon-circle-arrow-down"
-        type="button" data-toggle="dropdown" >
-      </button>
-      <ul class="dropdown-menu">
-        <% if user_signed_in? %>
-          <li>
-            <%= link_to t("address.new_address"), "#myModal",
-            data: {toggle: "modal", name: t("address.new.name"), directional: "new_address"},
-            id: "new_address" %>
-          </li>
-          <li>
-            <%= link_to t("logout"), destroy_user_session_path,
-            method: :delete, class: "navbar-link" %>
-          </li>
-        <% else %>
-          <li><%= link_to t("login"), new_user_session_path %></li>
-          <li><%= link_to t("register"), new_user_registration_path %></li>
-        <% end %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
-</header>
+</nav>
