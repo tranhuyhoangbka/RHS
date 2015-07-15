@@ -9,8 +9,8 @@
     <link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" type="text/css">
     <%= csrf_meta_tags %>
   </head>
-  <body onLoad="initialize()">
-    <div id="header_wrapper">
+  <body>
+    <div id="header_wrapper" data-user-id="<%= current_user.nil? ? "" : current_user.id %>">
       <%= render "shared/header" %>
     </div>
 
@@ -29,7 +29,7 @@
         </div>
       </div>
     </div>
-
     <%= render "shared/footer" %>
+    <%= render "shared/chat_dialog" %>
   </body>
 </html>
