@@ -1,3 +1,15 @@
 <div class="address">
-  <h1><%= @address.description %></h1>
+  <div class="address-info">
+    <div class="title">
+      <%= @address.address %>
+    </div>
+    <div class="address-content">
+      <%= render "addresses/carousel", address: @address %>
+    </div>
+  </div>
+  <div class="address-reviews">
+    <div class="title">
+      <%= @address.description %>
+    </div>
+  </div>
 </div>

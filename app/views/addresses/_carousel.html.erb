@@ -1,0 +1,21 @@
+<div id="carousel-example-generic" class="carousel slide">
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%= image_tag address.images.last.photo.medium.url %>
+    </div>
+    <% address.images.each do |image| %>
+      <div class="item">
+        <%= image_tag image.photo.medium.url %>
+      </div>
+    <% end %>
+  </div>
+
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only"><%= t("Previous") %></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only"><%= t("Next") %></span>
+  </a>
+</div>

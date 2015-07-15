@@ -142,7 +142,7 @@ function attachSecretMessage(marker, num) {
   google.maps.event.addListener(marker, "click", function() {
     $.fancybox({
       "type" : "iframe",
-      "href" : gethost() +"/addresses/"+ addresses[num].id,
+      "href" : "http://" + location.host + "/addresses/" + addresses[num].id,
       "overlayShow" : true,
       "centerOnScroll" : true,
       "speedIn" : 100,
@@ -178,4 +178,19 @@ function calcRoute(target_lat, target_lng) {
   } else {
     alert("No Gelocation Support!");
   }
+}
+
+$(document).ready(function() {
+  $(".carousel").carousel("pause");
+});
+
+function remove_fields(link) {
+  $(link).prev("input[type=hidden]").val("1");
+  $(link).closest(".fields").hide();
+}
+
+function add_fields(link, association, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g")
+  $("#image-fields").append(content.replace(regexp, new_id));
 }
