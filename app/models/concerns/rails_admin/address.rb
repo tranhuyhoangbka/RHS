@@ -16,6 +16,7 @@ module RailsAdmin::Address
         end
         field :address
         field :user
+        field :images
       end
     end
   end
