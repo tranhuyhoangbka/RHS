@@ -1,4 +1,6 @@
 class Address < ActiveRecord::Base
+  include RailsAdmin::Address
+
   belongs_to :user
   has_many :rooms, dependent: :destroy
   has_many :images, dependent: :destroy
