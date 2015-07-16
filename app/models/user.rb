@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include RailsAdmin::User
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :omniauthable
   has_many :addresses, dependent: :destroy
@@ -22,7 +24,7 @@ class User < ActiveRecord::Base
     end
     @google_oauth2_client
   end
-    
+
   def facebook
     identities.where(provider: Settings.provider.facebook).first
   end
