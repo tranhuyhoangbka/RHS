@@ -1,0 +1,29 @@
+<div class="address">
+  <div class="address-thumb">
+    <% if address.images.first.present? %>
+      <%= image_tag address.images.first.photo.small_thumb.url %>
+    <% else %>
+      <%= image_tag "house-thumb.jpg" %>
+    <% end %>
+    <div class="address-id">
+      Mã tin  # <%= address.id %>
+    </div>
+  </div>
+  <div class="address-details">
+    <div class="title">
+      <%= link_to address.title, address_path(address),
+        title: "#{address.title}" %>
+    </div>
+    <p><%= address.address %></p>
+    <p>
+      <%= t "capacity" %>: <span class="capacity"><%= address.capacity %>
+      </span> |
+      <%= t "contact" %>: <span class="contact"><%= address.contact %></span>
+    </p>
+    <div>
+      <span class="right">
+        <%= address.created_at.to_date.to_formatted_s(:long_ordinal) %>
+      </span>
+    </div>
+  </div>
+</div>
