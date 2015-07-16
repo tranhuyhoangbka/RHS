@@ -3,7 +3,7 @@ class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :destroy]
 
   def index
-    @addresses = Address.all
+    @addresses = Address.all.page params[:page]
     @address = Address.new
   end
 
@@ -24,7 +24,7 @@ class AddressesController < ApplicationController
         format.html {redirect_to root_path, notice: t("address.create")}
       else
         format.html {render :new}
-      end      
+      end
     end
   end
 

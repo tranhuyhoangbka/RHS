@@ -1,5 +1,8 @@
-<%= render "shared/filter" %>
-<h1>Main Content</h1>
+<div class="main-content">
+  <%= render @addresses %>
+</div>
+
+<%= paginate @addresses %>
 
 <% content_for :right do %>
   <h1>Right content</h1>

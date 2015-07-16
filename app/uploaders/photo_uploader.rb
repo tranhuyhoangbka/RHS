@@ -1,6 +1,6 @@
 class PhotoUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  
+
   storage :file
 
   version :medium do
@@ -8,7 +8,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   version :small_thumb, from_version: :medium do
-    process resize_to_fill: [20, 20]
+    process resize_to_fill: [70, 60]
   end
 
   def store_dir
