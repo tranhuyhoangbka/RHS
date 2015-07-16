@@ -1,0 +1,23 @@
+<div class="recent_address col-md-12">
+  <div class="col-md-3">
+    <% if recent_address.images.first.present? %>
+      <%= image_tag recent_address.images.first.photo.url %>
+    <% else %>
+      <%= image_tag "house-thumb.jpg" %>
+    <% end %>
+  </div>
+  <div class="col-md-9" >
+    <div class="description" title="<%= recent_address.description %>">
+      <%= link_to recent_address.description, "#" %>
+    </div>
+    <p id="recent-recent_addressress-info">
+      <span class="fa fa-square-o"></span>
+      <%= t "square" %><span class="num-info"><%= recent_address.rooms.first.square %></span> | 
+      <span class="fa fa-usd"></span>
+      <%= t "price" %><span class="num-info">
+        <%= recent_address.rooms.first.simplify_price %></span><br>
+      <span class="glyphicon glyphicon-phone"></span>
+      <%= t "contact" %><span class="num-info"><%= recent_address.contact %></span>
+    </p>
+  </div>
+</div>
