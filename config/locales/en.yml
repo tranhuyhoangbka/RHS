@@ -60,3 +60,15 @@ en:
   Next: Next
   Add_Image: "Add Image"
   Remove_Image: "Remove Image"
+  signin:
+    title: "Login to rental house"
+    twitter: "Sign in with Twitter"
+    facebook: "Sign in with Facebook"
+    google: "Sign in with Google"
+    linken: "Sign in with Linken"
+    email: "example@gmail.com"
+    password: "Password"
+    forgot_password: "Forgot your password?"
+    signup_button: "Signup now"
+    remember: "Remember login"
+    err_msg: "Wrong username og password"
