@@ -8,8 +8,7 @@ class AddressesController < ApplicationController
   end
 
   def show
-    @address = Address.find params[:id]
-    render layout: "address"
+    @address = Address.find params[:id]    
   end
 
   def new

@@ -279,3 +279,77 @@ div.modal-content {
 #remember {
   margin-bottom: 5px;
 }
+
+#primary {
+  background: none repeat scroll 0 0 white;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding: 8px 8px 50px 8px;
+
+  .title {
+    margin-bottom: 8px;
+    h3 {
+      font-size: 22px;
+      color: #337ab7;
+      margin: 10px 0px 18px 5px;
+    }
+    p {
+      font-size: 13px;
+      color: #999;
+      margin-left:10px;
+    }
+  }
+  .address-detail {    
+    padding-bottom: 10px;
+    p {
+      margin: 0px 0px 2px 8px;
+      line-height: 25px;
+      .labels {
+        color: #000;
+        font-weight: bold;
+      }
+      span:last-child {
+        margin-left: 6px;
+      }        
+    }
+    .list-info {
+      margin: 0px 0px 20px 10px;
+      padding: 20px 0px 50px 0px;
+      border-top: 1px solid #d7edfc;
+      border-bottom: 1px solid #d7edfc;
+      img {
+        width: 110px;
+        height: 110px;        
+      }      
+      a {
+        display: block;
+        font-size: 16px;
+        margin: -110px 0px 0px 120px;
+      }
+    }
+  }  
+  .image-addresses {    
+    .item img {
+      margin: auto;
+    }
+    #carousel-example-generic {
+      width: 612px;
+      height: 378px;
+      margin: auto;
+      border-radius: 10px;
+      img {
+        height: 374px;
+        width: 612px;
+      }
+    }
+  }
+  .address_description {
+    margin: 5px 0px 40px 0px;
+    p {
+      margin: 0px 8px 0px 5px;
+    }
+  }
+}

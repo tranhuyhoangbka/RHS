@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :address do
     contact {Faker::PhoneNumber.cell_phone}
     address {Faker::Address.street_address}
-    description {Faker::Lorem.sentence 5}
+    description {Faker::Lorem.paragraph(6, true)}
     lat {rand 20.0..22.0}
     lng {rand 105.0..106.0}
     capacity {rand 1..10}

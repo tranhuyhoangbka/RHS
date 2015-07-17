@@ -1,11 +1,11 @@
-<div id="carousel-example-generic" class="carousel slide">
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <%= image_tag address.images.last.photo.medium.url %>
-    </div>
+<div id="carousel-example-generic" class="carousel slide" 
+                                   data-interval="false">
+  <div class="carousel-inner" role="listbox">    
     <% address.images.each do |image| %>
-      <div class="item">
-        <%= image_tag image.photo.medium.url %>
+      <div class="item">        
+        <%= link_to image.photo.url, {class: "fancybox", rel: "gallery"} do %>
+          <%= image_tag image.photo.medium.url %>
+        <% end %>
       </div>
     <% end %>
   </div>
