@@ -1,10 +1,6 @@
 <div class="address">
   <div class="address-thumb">
-    <% if adds_by_province.images.first.present? %>
-      <%= image_tag adds_by_province.images.first.photo.small_thumb.url %>
-    <% else %>
-      <%= image_tag Settings.images.house_image %>
-    <% end %>
+    <%= image_tag_link adds_by_province %>
     <div class="address-id">
       <%= t "new_code" %> <%= adds_by_province.id %>
     </div>
@@ -12,7 +8,9 @@
   <div class="address-details">
     <div class="title">
       <%= link_to adds_by_province.title, address_path(adds_by_province),
-        title: "adds_by_province.title" %>
+        title: "adds_by_province.title", class: "visit",
+        data: {adds_by_province: adds_by_province.as_json.merge({
+          image_tag: image_tag_link(adds_by_province)})} %>
     </div>
     <p><%= adds_by_province.address %></p>
     <p>
