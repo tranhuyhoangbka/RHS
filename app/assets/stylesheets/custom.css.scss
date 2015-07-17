@@ -253,3 +253,29 @@ html, body{
     }
   }
 }
+
+/* login form */
+
+ul.list-unstyled li {
+  margin-bottom: 10px;
+}
+
+p.lead {
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+div.modal-content {
+  box-shadow: none;
+  border: none;
+  border-radius: none;
+  background-color: #E6E6E6;
+}
+
+#login-overlay {
+  margin-left: 0px;
+}
+
+#remember {
+  margin-bottom: 5px;
+}

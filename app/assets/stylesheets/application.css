@@ -13,4 +13,6 @@
  *= require_tree .
  *= require_self
  *= require fancybox
+ *= require bootstrap-social
+ *= require font-awesome
  */
