@@ -353,3 +353,79 @@ div.modal-content {
     }
   }
 }
+
+/* right content column */
+
+#bnt-box {
+  border-radius: 5px;
+  padding: 15px 0px;
+  text-align: center;
+  margin-bottom: 10px;
+  background-color: white;
+  border: solid 1px;
+  border-color: #cbd3d1;
+
+  .btn {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border: soild 1px;
+  }
+}
+
+#recent-address-box {
+  border-radius: 5px;
+  border: solid 1px;
+  background-color: white;
+  border-color: rgb(203, 211, 209);
+
+  img {
+    width: 95%;
+    height: 100%;
+    margin-top: 10px;
+  }
+
+  .recent_address {
+    border-bottom: dotted 1px;
+    border-color: rgb(203, 211, 209);
+
+    .col-md-3 {
+      padding: 0px;
+    }
+  }
+}
+
+#recent-address-info{
+  font-size: 13px;
+
+  .glyphicon-phone {
+    margin-left: -1px;
+  }
+}
+
+.description {
+  white-space: nowrap; 
+  overflow: hidden;
+  width: 100%; 
+  text-overflow: ellipsis;
+  padding: 7px 0px 0px;
+  font-size: 16px;
+}
+
+#right-content-title {
+  border-bottom: soild 1px;
+  padding: 10px 0px 10px 0px;
+  border-bottom: solid 1px;
+  border-color: rgb(203, 211, 209);
+
+  .glyphicon {
+    margin: 0px 3px 0px 15px;
+  }
+}
+
+.num-info {
+  color: red;
+}
+
+#fix-index-column {
+  padding-left: 0px;
+}

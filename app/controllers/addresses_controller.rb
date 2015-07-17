@@ -5,6 +5,7 @@ class AddressesController < ApplicationController
   def index
     @addresses = Address.all.page params[:page]
     @address = Address.new
+    @recent_addresses = Address.last Settings.num_of_recent_addresses
   end
 
   def show

@@ -6,6 +6,7 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <link href="http://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -17,7 +18,7 @@
         <%= render "shared/navbar" %>
       </div>
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8" id="fix-index-column">
           <%= yield %>
         </div>
         <div class="col-md-4">

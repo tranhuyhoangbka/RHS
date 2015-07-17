@@ -76,3 +76,10 @@ en:
     signup_button: "Signup now"
     remember: "Remember login"
     err_msg: "Wrong username og password"
+  price: "Price: "
+  contact: "Contact: "
+  square: "Square: "
+  recent_address: "Recent added address"
+  button: 
+    add_address: "Add new address"
+    quick_guide: "How to add address"

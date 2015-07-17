@@ -15,3 +15,4 @@ image_sample:
   - /app/assets/images/house3.jpg
 user:
   avatar_default: "avatar_default.jpg"  
+num_of_recent_addresses: 10

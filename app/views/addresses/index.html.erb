@@ -5,6 +5,24 @@
 <%= paginate @addresses %>
 
 <% content_for :right do %>
-  <h1>Right content</h1>
-<% end %>
+  <div id="right-content">
 
+    <div id="bnt-box" class="row">
+      <button class="btn btn-danger col-md-10 col-md-offset-1">
+        <%= t "button.add_address" %>
+      </button>
+      <button class="btn btn-danger col-md-10 col-md-offset-1">
+        <%= t "button.quick_guide" %>
+      </button>
+    </div>
+    <div id="recent-address-box" class="row">
+      <div id="right-content-title">
+        <span class="glyphicon glyphicon-home"></span>
+          <strong><%= t "recent_address" %></strong>
+      </div>
+      <div >
+        <%= render partial: "recent_address", collection: @recent_addresses %>
+      </div>
+    </div>
+  </div>
+<% end %>
