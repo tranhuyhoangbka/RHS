@@ -83,7 +83,7 @@ nav ul.nav li a{
 }
 
 html, body{
-  height: 91%;
+  height: 100%;
   margin: 0px;
   padding: 0px
 }
@@ -228,6 +228,11 @@ html, body{
 .address {
   width: 100%;
   padding: 8px 5px 30px 5px;
+  border-radius: 5px;
+  padding: 8px 5px 20px 5px;
+  border-radius: 3px;
+  padding: 8px 5px 10px 5px;
+  margin-bottom: 7px;
   background: #FFF;
   border-bottom: solid 1px;
   border-color: #cbd3d1;
@@ -264,14 +269,19 @@ html, body{
       font-size: 18px;
       color: #333;
     }
-    .right {
-      font-size: 14px;
-      float: right;
-      color: #999;
-      font-style: italic;
-    }
     p {
       margin: 0px;
+    }
+    .more-info {
+      .left {
+        cursor: pointer;
+      }
+      .right {
+        font-size: 14px;
+        float: right;
+        color: #999;
+        font-style: italic;
+      }
     }
   }
 }

@@ -114,39 +114,6 @@ function showPosition(position) {
   map.setCenter(geolocate);
 }
 
-function gmap_show_addresses(addresses) {
-  for (var i = 1; i < addresses.length; i++) {
-    var position = new google.maps.LatLng(addresses[i].lat, addresses[i].lng);
-    var marker = new google.maps.Marker({
-      position: position,
-      map: map,
-      id: addresses[i].id
-    });
-    marker.setTitle((i + 1).toString());
-    attachSecretMessage(marker, i);
-    var infowindow = new google.maps.InfoWindow({
-      content: "<button onclick = \"calcRoute(" + addresses[i].lat + "," +
-        addresses[i].lng + ")\">Directions</button>"
-    });
-    infowindow.open(map, marker);
-  }
-}
-
-function attachSecretMessage(marker, num) {
-  google.maps.event.addListener(marker, "click", function() {
-    $.fancybox({
-      "type" : "iframe",
-      "href" : "http://" + location.host + "/addresses/" + addresses[num].id,
-      "overlayShow" : true,
-      "centerOnScroll" : true,
-      "speedIn" : 100,
-      "speedOut" : 50,
-      "width" : "80%",
-      "height" : "80%"
-    });
-  });
-}
-
 function calcRoute(target_lat, target_lng) {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -173,3 +140,17 @@ function calcRoute(target_lat, target_lng) {
     console.log("No Gelocation Support!");
   }
 }
+
+$(document).on("click", ".icon-map", function(){
+  var address_id = $(this).data("address-id");
+  $.fancybox({
+    "type" : "iframe",
+    "href" : "http://" + location.host + "/maps/" + address_id,
+    "overlayShow" : true,
+    "centerOnScroll" : true,
+    "speedIn" : 100,
+    "speedOut" : 50,
+    "width" : "80%",
+    "height" : "80%"
+  });
+});
