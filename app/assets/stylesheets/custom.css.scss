@@ -211,7 +211,7 @@ html, body{
 
 .address {
   width: 100%;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 8px 5px 20px 5px;
   margin-bottom: 7px;
   background: #FFF;
@@ -236,7 +236,7 @@ html, body{
     padding-left: 20%;
 
     .capacity {
-      color: red;
+      color: #DA0802
     }
     .contact {
       color: #666;
@@ -379,14 +379,16 @@ div.modal-content {
   border-color: rgb(203, 211, 209);
 
   img {
-    width: 95%;
+    width: 93%;
     height: 100%;
-    margin-top: 10px;
+    margin-top: 8px;
   }
 
   .recent_address {
     border-bottom: dotted 1px;
     border-color: rgb(203, 211, 209);
+    padding-left: 10px;
+    padding-right: 10px;
 
     .col-md-3 {
       padding: 0px;
@@ -395,7 +397,7 @@ div.modal-content {
 }
 
 #recent-address-info{
-  font-size: 13px;
+  font-size: 12px;
 
   .glyphicon-phone {
     margin-left: -1px;
@@ -408,7 +410,7 @@ div.modal-content {
   width: 100%;
   text-overflow: ellipsis;
   padding: 7px 0px 0px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 #right-content-title {
@@ -423,7 +425,7 @@ div.modal-content {
 }
 
 .num-info {
-  color: red;
+  color: #DA0802
 }
 
 #fix-index-column {
@@ -512,4 +514,13 @@ legend {
   width: auto;
   margin-left: 160px;
   font-weight: bold;
+}
+
+#fa-square {
+  font-size: 11px;
+  padding-right: 1px;
+}
+
+#fa-usd {
+  margin-left: 5px;
 }

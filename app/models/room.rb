@@ -3,6 +3,6 @@ class Room < ActiveRecord::Base
   has_many :images
 
   def simplify_price  
-    "#{price/1000000}M" if price >= 1000000
+    "#{price/1000000} M" if price >= 1000000
   end
 end
