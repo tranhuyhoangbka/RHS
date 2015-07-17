@@ -1,15 +1,60 @@
-<div class="address">
+<div id="primary">
   <div class="address-info">
     <div class="title">
-      <%= @address.address %>
+      <h3><%= @address.title %></h3>
+      <p>
+        <%= t "posted_at" %>
+        <%= @address.created_at.to_date.to_formatted_s :long_ordinal %>
+      </p>
     </div>
-    <div class="address-content">
+
+    <div class="address-detail">
+      <div class="list-info">
+        <div class="row">
+          <div class="col-md-5">
+            <% if @address.user.avatar %>
+              <%= image_tag @address.user.avatar.url, class: "img-thumbnail" %>
+            <% else %>
+              <%= image_tag Settings.user.avatar_default, class: "img-thumbnail" %>
+            <% end %>            
+            <strong><a href="#"><%= @address.user.name %></a></strong>
+          </div>
+
+          <div class="col-md-7">
+            <p>
+              <span class="labels">
+                <i class="glyphicon glyphicon-map-marker"></i>
+                <%= t "address_contact" %>:
+              </span>
+              <span class="info-line"> <%= @address.address %></span>
+            </p>
+
+            <p>
+              <span class="labels">
+                <i class="glyphicon glyphicon-earphone"></i>
+                <%= t "phone" %>:
+              </span>
+              <span class="info-line"> <%= @address.contact %></span>
+            </p>
+
+            <p>
+              <span class="labels"> 
+                <i class="glyphicon glyphicon-home"></i>
+                <%= t "number_room" %>:
+              </span>
+              <span class="info-line"> <%= @address.capacity %></span>
+            </p>
+          </div>
+        </div>
+      </div>      
+    </div>    
+    
+    <div class="address_description">
+      <p><%= @address.description %></p>
+    </div>
+
+    <div class="image-addresses">
       <%= render "addresses/carousel", address: @address %>
-    </div>
-  </div>
-  <div class="address-reviews">
-    <div class="title">
-      <%= @address.description %>
-    </div>
+    </div>  
   </div>
 </div>

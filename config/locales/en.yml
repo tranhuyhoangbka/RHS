@@ -48,6 +48,10 @@ en:
     new:
       name: "Create New Address"
       button: "Create New Address"
+    posted_at: "Posted at"
+    address_contact: "Address"
+    phone: "Phone"
+    number_room: "Number Rooms"
   directions:
     travel_mode: "Mode of travel"
     driving: "DRIVING"

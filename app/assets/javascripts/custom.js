@@ -1,6 +1,28 @@
 $(document).ready(function(){
   $("#mylocation").click(function(){
     geoLocation();
+  });  
+  $(".carousel-inner .item:first-child").addClass("active");
+
+  $(".item img").click(function(){
+    $(".fancybox").fancybox({
+      speedIn : 600,
+      speedOut : 200,
+      padding : 2,
+      helpers : {
+        overlay : {
+          locked : false
+        }
+      },
+      beforeShow: function () {
+        $(".fancybox-image").css({
+          width : 700,
+          height : 500
+        });        
+        this.width = 700;
+        this.height = 500;
+      },
+    });    
   });
 });
 
