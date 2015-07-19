@@ -2,12 +2,16 @@
   <div class="address-info">
     <div class="title">
       <h3><%= @address.title %></h3>
+      <div id = "wrap"></div>
+      <div class="show-rate">
+        <%= rating_for @address, "trust" %>
+      </div>
       <p>
         <%= t "posted_at" %>
         <%= @address.created_at.to_date.to_formatted_s :long_ordinal %>
       </p>
     </div>
-
+        
     <div class="address-detail">
       <div class="list-info">
         <div class="row">
@@ -46,8 +50,8 @@
             </p>
           </div>
         </div>
-      </div>      
-    </div>    
+      </div>
+    </div>
     
     <div class="address_description">
       <p><%= @address.description %></p>
@@ -55,6 +59,10 @@
 
     <div class="image-addresses">
       <%= render "addresses/carousel", address: @address %>
-    </div>  
+    </div>
+  </div>
+
+  <div class="review-area">
+    <%= render "review_area" %>
   </div>
 </div>

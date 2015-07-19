@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require custom
+//= require jquery.remotipart
+//= require jquery.raty
+//= require ratyrate
 //= require bootstrap
 //= require fancybox
 //= require custom

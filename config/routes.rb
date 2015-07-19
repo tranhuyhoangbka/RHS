@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   mount RailsAdmin::Engine => "/admin", as: "rails_admin"
 
   root "addresses#index"
@@ -13,5 +14,7 @@ Rails.application.routes.draw do
     get "/users/auth/:provider/setup", to: "omniauth_callbacks#setup"
   end
 
-  resources :addresses
+  resources :addresses do
+    resources :reviews, only: [:create, :update, :destroy]
+  end
 end

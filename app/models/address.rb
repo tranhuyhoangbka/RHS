@@ -8,5 +8,7 @@ class Address < ActiveRecord::Base
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  enum type: [:apartment, :villa]
+  ratyrate_rateable Settings.review.dimensions
+
+  enum type: [:apartment, :villa]  
 end

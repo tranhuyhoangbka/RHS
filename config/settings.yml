@@ -16,3 +16,5 @@ image_sample:
 user:
   avatar_default: "avatar_default.jpg"  
 num_of_recent_addresses: 10
+review:
+  dimension: "trust"

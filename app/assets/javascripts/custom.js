@@ -24,6 +24,10 @@ $(document).ready(function(){
       },
     });    
   });
+  $("#choose-file").hide();
+  $(".upload-img img").click(function(){
+    $("#choose-file").click();
+  });
 });
 
 var directionsDisplay;

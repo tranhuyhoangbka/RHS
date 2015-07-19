@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :identities
-
+  
+  ratyrate_rater
+  
   enum role: [:normal, :admin]
 
   def google_oauth2

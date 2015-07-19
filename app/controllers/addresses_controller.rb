@@ -9,7 +9,8 @@ class AddressesController < ApplicationController
   end
 
   def show
-    @address = Address.find params[:id]    
+    @address = Address.find params[:id]
+    @review = @address.reviews.build
   end
 
   def new

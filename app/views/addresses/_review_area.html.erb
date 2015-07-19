@@ -1,0 +1,6 @@
+<header>
+  <h3><%= pluralize @address.reviews.count, "Comment" %></h3>  
+</header>
+<div class="review-body">
+  <%= render "review_form" %>
+</div>
