@@ -80,6 +80,14 @@ en:
   contact: "Contact: "
   square: "Square: "
   recent_address: "Recent added address"
-  button: 
+  button:
     add_address: "Add new address"
     quick_guide: "How to add address"
+  signup:
+    name: "Your Name"
+    email: "Your Email"
+    password: "Password"
+    password_confirmation: "Password Confirmation"
+    submit: "Create my account"
+    to_signin: "Do you want login?"
+    banner: "It's free and always will be."
