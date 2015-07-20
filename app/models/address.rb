@@ -1,5 +1,6 @@
 class Address < ActiveRecord::Base
   include RailsAdmin::Address
+  attr_accessor :google_map
 
   belongs_to :user
   has_many :rooms, dependent: :destroy
