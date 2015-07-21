@@ -474,6 +474,7 @@ DEPENDENCIES
   rails_config
   ransack
   ratyrate
+  remotipart
   rspec-rails
   sass-rails
   sdoc (~> 0.4.0)

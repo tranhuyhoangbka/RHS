@@ -313,15 +313,23 @@ div.modal-content {
 
   .title {
     margin-bottom: 8px;
-    h3 {
+    h2 {
       font-size: 22px;
       color: #337ab7;
-      margin: 10px 0px 18px 5px;
+      margin: 10px 0px 11px 5px;
     }
     p {
       font-size: 13px;
       color: #999;
-      margin-left:10px;
+      margin: 20px 0px 0px 2px;
+    }
+    #show-score {
+      margin-left: 4px;
+      width: 110px;
+    }
+    #show-score + span {
+      display: block;
+      margin: -20px 0px 0px 120px;
     }
   }
   .address-detail {
@@ -728,5 +736,98 @@ select.form-control {
 
   #fa-copyright {
     margin-right: 2px;
+  }
+}
+.review-area {
+  padding: 0px 5px 0px 5px;
+  #header {
+    padding-bottom: 18px;
+    border-bottom: 2px solid #EBEEEF;
+    h2 {
+      margin: 50px 0px 0px 12px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #3f4549;
+    }
+    p {
+      width: 79px;
+      margin-left: 10px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #C00000;
+    }
+  }
+  .review-body {
+    margin-top: 26px;
+    h2 {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0px 0px 20px 12px;
+    }
+    .avatar img {
+      width: 60px;
+      height: 60px;
+    }
+    .form-create-review {
+      width: 580px;
+      margin: 0px auto;
+      img {
+        margin: 0px 13px 0px 0px;
+      }
+      #new_review {
+        margin-left: 20px;
+        #review_content {
+          width: 500px;
+          height: 80px;
+          max-width: 500px;
+          min-width: 500px;
+          min-height: 80px;
+          border: 1px solid #CCD3D7;
+          font-size: 16px;
+        }
+        .post-action {
+          width: 500px;
+          border: 1px solid #CCD3D7;
+          border-top: none;
+          border-radius: 3px;
+          padding: 3px 0px 3px 0px;
+          section {
+            float: left;
+            margin-top: 5px;
+          }
+          .upload-img {
+            width: 40px;
+            img {
+              width: 28px;
+              height: 28px;
+              margin: 1px 0px 0px 20px;
+            }
+            #choose-file {
+              background: image-url("upload_img.png");
+            }
+            img:hover {
+              cursor: pointer;
+            }
+          }
+          #selected-file-name {
+            margin-left: 18px;
+          }
+          .rate-address {
+            width: 190px;
+            margin: 12px 0px 0px 50px;
+          }
+          .form-actions {
+            width: 120px;
+            margin-left: 88px;
+            input {
+              color: #fff;
+              margin: 2px 0px 0px 0px;
+              font-weight: bold;
+              background: #4466AA;
+              border: none;
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     get "/users/auth/:provider/setup", to: "omniauth_callbacks#setup"
   end
 
-  resources :addresses
+  resources :addresses do
+    resources :reviews, only: :create
+  end
   resources :searchs, only: :index
 end

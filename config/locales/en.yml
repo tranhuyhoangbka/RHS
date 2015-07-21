@@ -18,7 +18,6 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
   app_name: "Rental House System"
@@ -35,6 +34,7 @@ en:
   confirm_instructions: "Didn't receive confirmation instructions?"
   unlock_instructions: "Didn't receive unlock instructions?"
   sign_in_with_google: "Sign in with google"
+  submit: "Submit"
   api:
     local: "Your location"
     search: "Search"
@@ -138,3 +138,14 @@ en:
     hotline: "Holine: 0166778899"
     email: "Email: Framgia@rentalhouse.com"
     address: "Address: Keangnam Landmark Tower"
+  matin: "Ma Tin #"
+  review:
+    create_fail: "Review has not been created"
+    placeholder: "Join the discussion............."
+    review_label: "Review"
+    vote: "Vote"
+    alert_login1: "You must be logged in to post a review. Click "
+    alert_login2: "to login"
+    here: "here"
+    add_new: "Add a new review"
+    upload_title: "Upload photo"

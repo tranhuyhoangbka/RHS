@@ -14,7 +14,7 @@ image_sample:
   - /app/assets/images/house2.jpg
   - /app/assets/images/house3.jpg
 user:
-  avatar_default: "avatar_default.jpg"  
+  avatar_default: "avatar_default.jpg"
 num_of_recent_addresses: 10
 pages:
   ten: 10
@@ -173,3 +173,5 @@ facilities:
   40: 40
 images:
   house_image: "house-thumb.jpg"
+review:
+  upload_icon: "upload_img.png"

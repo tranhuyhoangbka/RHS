@@ -17,6 +17,7 @@ class AddressesController < ApplicationController
   def show
     @address = Address.find params[:id]
     @recent_addresses = Address.last Settings.num_of_recent_addresses
+    @review = @address.reviews.build
   end
 
   def new
