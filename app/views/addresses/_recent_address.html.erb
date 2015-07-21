@@ -8,12 +8,15 @@
   </div>
   <div class="col-md-9" >
     <div class="description" title="<%= recent_address.description %>">
-      <%= link_to recent_address.description, "#" %>
+      <%= link_to recent_address.description, address_path(recent_address) %>
     </div>
-    <p id="recent-recent_addressress-info">
-      <span class="fa fa-square-o"></span>
-      <%= t "square" %><span class="num-info"><%= recent_address.rooms.first.square %></span> | 
-      <span class="fa fa-usd"></span>
+    <p id="recent-address-info">
+      <span class="fa fa-square-o" id="fa-square"></span>
+      <%= t "square" %>
+      <span class="num-info">
+        <%= recent_address.rooms.first.square %> m<sup>2</sup>
+      </span>
+      <span class="fa fa-usd" id="fa-usd"></span>
       <%= t "price" %><span class="num-info">
         <%= recent_address.rooms.first.simplify_price %></span><br>
       <span class="glyphicon glyphicon-phone"></span>
