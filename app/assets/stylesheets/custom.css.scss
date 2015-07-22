@@ -211,10 +211,10 @@ html, body{
 
 .address {
   width: 100%;
-  border-radius: 5px;
-  padding: 8px 5px 20px 5px;
-  margin-bottom: 7px;
+  padding: 8px 5px 30px 5px;
   background: #FFF;
+  border-bottom: solid 1px;
+  border-color: #cbd3d1;
 
   .address-thumb {
     width: 20%;
@@ -245,7 +245,7 @@ html, body{
       color: #666;
     }
     .title {
-      font-size: 22px;
+      font-size: 18px;
       color: #333;
     }
     .right {
@@ -253,6 +253,9 @@ html, body{
       float: right;
       color: #999;
       font-style: italic;
+    }
+    p {
+      margin: 0px;
     }
   }
 }
@@ -552,11 +555,48 @@ select.form-control {
 
 #title {
   position: relative;
-  height: 27px;
+  height: 34px;
   top: 6px;
 }
 
 #max_price, #max_facility, #max_square {
   position: relative;
   top: 10px;
+}
+
+.div-title {
+  border-bottom: soild 1px;
+  padding: 10px 0px 10px 0px;
+  border-bottom: solid 1px;
+  border-color: rgb(203, 211, 209);
+
+  span {
+    margin-left: 5px;
+  }
+
+  #link {
+    float: right;
+    margin-right: 5px;
+  }
+}
+
+.main-content {
+  border-radius: 5px;
+  border: solid 1px;
+  background-color: white;
+  border-color: #E6E6E6;
+  margin-bottom: 10px;
+}
+
+.panel-default > .panel-heading  {
+  background-color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.navbar-default {
+  background-color: #FFFFFF;
+}
+
+#search-panel {
+  margin-bottom: 15px;
 }

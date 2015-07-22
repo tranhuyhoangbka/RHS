@@ -18,6 +18,12 @@ user:
 num_of_recent_addresses: 10
 pages:
   ten: 10
+special_locations:
+  hanoi: "Ha Noi"
+  haiphong: "Ha Phong"
+  hue: "Hue"
+  HCM: "HCM"
+  danang: "Da Nang"
 locations:
   bacgiang: "Bac Giang"
   backan: "Bac Kan"
