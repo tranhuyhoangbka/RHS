@@ -6,5 +6,5 @@ module ApplicationHelper
     end
     link_to name, "#",
       onclick: h("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"), remote: true
-  end   
+  end
 end
