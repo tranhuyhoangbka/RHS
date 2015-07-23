@@ -29,8 +29,8 @@
           {class: "form-control", id: "max_facility"} %>
       </div>
       <div class="col-sm-3">
-        <%= f.label :address_region_province %>
-        <%= f.collection_select :address_region_province_cont, Settings.locations,
+        <%= f.label :region_province %>
+        <%= f.collection_select :region_province_cont, Settings.locations,
           :last, :last, {include_blank: t("search.region")},
           {class: "form-control", id: "address"} %>
         <div class="col-xs-6">  
@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="row-mid">
-      </p><%= f.text_field :address_title_cont, {placeholder: t("search.title"),
+      </p><%= f.text_field :title_cont, {placeholder: t("search.title"),
         class: "form-control", id: "title"} %><p></p>
       <div class="ad_search">
         <%= f.submit t("api.search"), {class: "btn btn-info btn-block",

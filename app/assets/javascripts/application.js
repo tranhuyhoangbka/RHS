@@ -30,7 +30,7 @@ $(document).ready(function(){
     $(".checkbox").not(this).prop("checked", false);
   });
 
-  $("#room_search").submit(function(event){
+  $("#address_search").submit(function(event){
     var min_square = $("#min_square").val(), max_square = $("#max_square").val(),
       min_facility = $("#min_facility").val(), max_facility = $("#max_facility").val(),
       min_price = $("#min_price").val(), max_price = $("#max_price").val(),
