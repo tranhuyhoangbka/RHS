@@ -17,6 +17,13 @@ GIT
       safe_yaml (~> 1.0)
       sass-rails (>= 4.0, < 6)
 
+GIT
+  remote: https://github.com/HieuMeo/RailsAdminMapField.git
+  revision: cfb31e89d8c56a067b23dc53281b533212c26b81
+  specs:
+    rails_admin_map_field (0.0.1)
+      rails (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -463,6 +470,7 @@ DEPENDENCIES
   pry
   rails (= 4.2.1)
   rails_admin!
+  rails_admin_map_field!
   rails_config
   ransack
   ratyrate

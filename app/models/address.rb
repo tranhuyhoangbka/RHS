@@ -1,5 +1,6 @@
 class Address < ActiveRecord::Base
   include RailsAdmin::Address
+  attr_accessor :google_map
 
   paginates_per Settings.pages.ten
 
