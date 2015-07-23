@@ -1,0 +1,29 @@
+<div class="address">
+  <div class="address-thumb">
+    <% if adds_by_province.images.first.present? %>
+      <%= image_tag adds_by_province.images.first.photo.small_thumb.url %>
+    <% else %>
+      <%= image_tag Settings.images.house_image %>
+    <% end %>
+    <div class="address-id">
+      <%= t "matin" %> <%= adds_by_province.id %>
+    </div>
+  </div>
+  <div class="address-details">
+    <div class="title">
+      <%= link_to adds_by_province.title, address_path(adds_by_province),
+        title: "adds_by_province.title" %>
+    </div>
+    <p><%= adds_by_province.address %></p>
+    <p>
+      <%= t "capacity" %>: <span class="capacity"><%= adds_by_province.capacity %>
+      </span> |
+      <%= t "contact" %>: <span class="contact"><%= adds_by_province.contact %></span>
+    </p>
+    <div>
+      <span class="right">
+        <%= adds_by_province.created_at %>
+      </span>
+    </div>
+  </div>
+</div>

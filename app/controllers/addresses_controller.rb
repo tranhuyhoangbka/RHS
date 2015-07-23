@@ -7,10 +7,16 @@ class AddressesController < ApplicationController
     @address = Address.new
     @recent_addresses = Address.last Settings.num_of_recent_addresses
     @search = Room.search params[:q]
+
+    @regions = []
+    Settings.special_locations.each do |pro| 
+    @regions << Address.by_province(pro.last)
+    end
   end
 
   def show
-    @address = Address.find params[:id]    
+    @address = Address.find params[:id]
+    @recent_addresses = Address.last Settings.num_of_recent_addresses
   end
 
   def new

@@ -1,9 +1,14 @@
 <%= render "shared/filter" %>
-<div class="main-content">
-  <%= render @addresses %>
-</div>
-
-<%= paginate @addresses %>
+<% @regions.each do |add| %>
+  <div class="main-content">
+    <div class="div-title">
+      <span class="glyphicon glyphicon-home"></span>
+      <strong><%= add.first.province %></strong>
+      <span id="link"><%= link_to "See more >>", "#" %></span>
+    </div>
+    <%= render partial: "adds_by_province", collection: add %>
+  </div>
+<% end %>
 
 <% content_for :right do %>
   <div id="right-content">
