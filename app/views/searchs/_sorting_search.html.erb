@@ -4,7 +4,7 @@
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu">
-    <li><%= sort_link @search, :address_title, Room.human_attribute_name(:title) %></li>
+    <li><%= sort_link @search, :address_title, Address.human_attribute_name(:title) %></li>
     <li><%= sort_link @search, :price %></li>
     <li><%= sort_link @search, :square %></li>
     <li><%= sort_link @search, :facility %></li>

@@ -6,7 +6,7 @@ class AddressesController < ApplicationController
     @addresses = Address.all.page params[:page]
     @address = Address.new
     @recent_addresses = Address.last Settings.num_of_recent_addresses
-    @search = Room.search params[:q]
+    @search = Address.search params[:q]
 
     @regions = []
     Settings.special_locations.each do |pro| 

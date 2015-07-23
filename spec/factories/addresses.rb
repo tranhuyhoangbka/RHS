@@ -10,9 +10,12 @@ FactoryGirl.define do
     title {Faker::Lorem.sentence}
     user
     region
-
+    square {rand 10..60}
+    parking true
+    facility {Faker::Lorem.paragraph 1}
+    price {rand(1..10)*1000000}
+    
     after(:build) do |address|
-      address.rooms << FactoryGirl.build(:room, address: address)
       address.reviews << FactoryGirl.build(:review, address: address)
       Settings.image_sample.each do |url|
         address.images << FactoryGirl.build(:image, address: address, 

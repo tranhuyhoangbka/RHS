@@ -1,13 +1,13 @@
 class SearchsController < ApplicationController
   def index
-    @search = Room.search params[:q]
+    @search = Address.search params[:q]
 
     if params[:q].reject {|k, v| v.blank?}.present?
       @sortings = Settings.sortings
       @search.build_condition if @search.conditions.empty?
-      @rooms = @search.result.page params[:page]
+      @addresses = @search.result.page params[:page]
     else
-      @rooms = []
+      @addresses = []
     end 
   end
 end
