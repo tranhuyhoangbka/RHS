@@ -44,8 +44,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if params[:provider] == Settings.provider.google
       scope = "email, profile, offline, https://www.googleapis.com/auth/admin.directory.user"
     end
-    redirect_to user_omniauth_authorize_path params[:provider],
-      flash: {scope: scope}
+    redirect_to user_omniauth_authorize_path params[:provider], flash: {scope: scope}
   end
 
   def setup

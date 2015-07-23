@@ -13,7 +13,7 @@ class Address < ActiveRecord::Base
 
   delegate :province, to: :region
 
-  def simplify_price  
+  def simplify_price
     "#{price/1000000} M" if price >= 1000000
   end
 
