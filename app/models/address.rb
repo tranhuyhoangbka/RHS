@@ -17,7 +17,7 @@ class Address < ActiveRecord::Base
     "#{price/1000000} M" if price >= 1000000
   end
 
-  scope :by_province, -> province{joins(:region)
+  scope :by_province, ->province{joins(:region)
     .where("regions.province = ?", province)
     .order(created_at: :desc).limit(Settings.num_of_adds_in_regions)}
 

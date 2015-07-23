@@ -1,11 +1,12 @@
 class AddressesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_address, only: [:show, :edit, :destroy]
+  before_action :find_address, only: [:show, :edit, :destroy]
 
   def index
     @addresses = Address.all.page params[:page]
     @address = Address.new
     @recent_addresses = Address.last Settings.num_of_recent_addresses
+
     @search = Address.search params[:q]
 
     @regions = []
@@ -25,12 +26,11 @@ class AddressesController < ApplicationController
 
   def create
     @address = Address.new address_params
-    respond_to do |format|
-      if @address.save
-        format.html {redirect_to root_path, notice: t("address.create")}
-      else
-        format.html {render :new}
-      end
+
+    if @address.save
+      redirect_to root_path, notice: t("address.create")
+    else
+      render :new
     end
   end
 
@@ -40,7 +40,7 @@ class AddressesController < ApplicationController
       :description, :type, images_attributes: [:id, :photo, :_destroy]
   end
 
-  def set_address
+  def find_address
     @address = Address.find params[:id]
   end
 end

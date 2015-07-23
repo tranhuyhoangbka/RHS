@@ -16,7 +16,7 @@
               <%= image_tag @address.user.avatar.url, class: "img-thumbnail" %>
             <% else %>
               <%= image_tag Settings.user.avatar_default, class: "img-thumbnail" %>
-            <% end %>            
+            <% end %>
             <strong><a href="#"><%= @address.user.name %></a></strong>
           </div>
 
@@ -38,7 +38,7 @@
             </p>
 
             <p>
-              <span class="labels"> 
+              <span class="labels">
                 <i class="glyphicon glyphicon-home"></i>
                 <%= t "number_room" %>:
               </span>
@@ -46,18 +46,19 @@
             </p>
           </div>
         </div>
-      </div>      
-    </div>    
-    
+      </div>
+    </div>
+
     <div class="address_description">
       <p><%= @address.description %></p>
     </div>
 
     <div class="image-addresses">
       <%= render "addresses/carousel", address: @address %>
-    </div>  
+    </div>
   </div>
 </div>
+
 <% content_for :right do %>
   <div id="right-content">
 

@@ -1,8 +1,7 @@
-<div id="carousel-example-generic" class="carousel slide" 
-                                   data-interval="false">
-  <div class="carousel-inner" role="listbox">    
+<div id="carousel-example-generic" class="carousel slide" data-interval="false">
+  <div class="carousel-inner" role="listbox">
     <% address.images.each do |image| %>
-      <div class="item">        
+      <div class="item">
         <%= link_to image.photo.url, {class: "fancybox", rel: "gallery"} do %>
           <%= image_tag image.photo.medium.url %>
         <% end %>
@@ -14,6 +13,7 @@
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only"><%= t("Previous") %></span>
   </a>
+
   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only"><%= t("Next") %></span>

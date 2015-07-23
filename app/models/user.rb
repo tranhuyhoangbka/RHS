@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   end
 
   def facebook
-    identities.where(provider: Settings.provider.facebook).first
+    identities.find_by provider: Settings.provider.facebook
   end
 
   def facebook_client
@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   end
 
   def twitter
-    identities.where(provider: Settings.provider.twitter).first
+    identities.find_by provider: Settings.provider.twitter
   end
 
   def twitter_client
@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   end
 
   def linkedin
-    identities.where(provider: Settings.provider.linkedin).first
+    identities.find_by provider: Settings.provider.linkedin
   end
 
   def linkedin_client
