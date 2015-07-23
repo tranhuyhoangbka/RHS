@@ -11,8 +11,8 @@
   <%= render "layouts/header" %>
   <%= yield %>
   <%= render "layouts/signin" %>
+
+  <%= render "shared/modal_form" if user_signed_in? %>
 </body>
 </html>
-<% if user_signed_in? %>
-  <%= render "shared/modal_form" %>
-<% end %>
+
