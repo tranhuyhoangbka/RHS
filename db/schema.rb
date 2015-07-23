@@ -80,11 +80,22 @@ ActiveRecord::Schema.define(version: 20150724065906) do
     t.boolean  "is_main",    limit: 1
   end
 
+  create_table "menus", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "ancestry",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "url",        limit: 255
+    t.integer  "postion",    limit: 4
+  end
+
+  add_index "menus", ["ancestry"], name: "index_menus_on_ancestry", using: :btree
+
   create_table "regions", force: :cascade do |t|
-    t.string   "province",         limit: 255
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.boolean  "special_location", limit: 1
+    t.string   "province",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.boolean  "is_home",    limit: 1
   end
 
   create_table "reviews", force: :cascade do |t|

@@ -20,5 +20,11 @@ RailsAdmin.config do |config|
     end
     delete
     show_in_app
+
+    nestable do
+      visible do
+        %w(Menu).include? bindings[:abstract_model].model_name
+      end
+    end
   end
 end
