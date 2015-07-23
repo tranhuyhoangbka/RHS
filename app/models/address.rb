@@ -21,7 +21,11 @@ class Address < ActiveRecord::Base
   delegate :province, to: :region
 
   def simplify_price
-    "#{price/1000000} M" if price >= 1000000
+    if price >= 1000000
+      "#{price/1000000} M"
+    else
+      price
+    end
   end
 
   scope :by_province, ->province{joins(:region).where "regions.province = ?", province}

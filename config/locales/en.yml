@@ -105,6 +105,8 @@ en:
   button:
     add_address: "Add new address"
     quick_guide: "How to add address"
+    update_account: "Update Account"
+    back: "Back"
   signup:
     name: "Your Name"
     email: "Your Email"
@@ -194,3 +196,4 @@ en:
     result: "Result: "
     to: "to"
     advance_search: "Advance Search"
+    wait_confirmation: "Currently waiting confirmation for:"

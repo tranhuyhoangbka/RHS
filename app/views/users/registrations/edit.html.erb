@@ -1,0 +1,41 @@
+<%= form_for resource, as: resource_name, url: registration_path(resource_name),
+  method: :put do |f| %>
+
+  <div class="btn-form">
+    <%= link_to "", root_path, class: "btn btn-primary back-btn glyphicon
+      glyphicon-arrow-left", title: t("button.back") %>
+    <%= f.submit t("button.update_account"), class: "btn btn-primary" %>
+  </div>
+  <div class="col-md-8 well">
+    <%= devise_error_messages! %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, class: "form-control" %>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>
+        <%= t "description.wait_confirmation" %>
+        <%= resource.unconfirmed_email %>
+      </div>
+    <% end %>
+
+    <%= f.label :password %> <i><%= t("pages.form.leave_blank") %></i>
+    <%= f.password_field :password, autocomplete: "off", class:
+      "form-control" %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off",
+      class: "form-control" %>
+
+    <%= f.label :current_password %> <i><%= t("pages.form.require_password") %></i>
+    <%= f.password_field :current_password, autocomplete: "off",
+      class: "form-control" %>
+   <hr/>
+    <span>
+      <%= f.file_field :avatar %>
+    </span>
+  </div>
+<% end %>

@@ -21,10 +21,11 @@ module ApplicationHelper
     end
   end
 
-  def link_to_avatar user
+  def link_to_avatar user, class_name = nil
     link_to user_path(id: user.id) do
             image_tag user.avatar.present? ? user.avatar.url :
-                                             Settings.user.avatar_default
+                                            Settings.user.avatar_default,
+                                            class: class_name
     end
   end
 

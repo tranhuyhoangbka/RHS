@@ -11,6 +11,11 @@ class User < ActiveRecord::Base
 
   enum role: [:normal, :admin]
 
+  mount_uploader :avatar, PhotoUploader
+
+  PARAMS_ATTRIBUTES = [:name, :email, :password, :password_confirmation,
+    :current_password, :avatar]
+
   def google_oauth2
     identities.where(provider: "google_oauth2").first
   end

@@ -1,12 +1,8 @@
 <div class="col-xs-3">
   <div class="panel​​ panel-default">
-    <div class="panel-heading" id="profile">  
-      <%= image_tag Settings.user.avatar_default, class: "avatar_user img-circle" %>
-      <p>
-        <button type="button" class="btn btn-warning btn-block" id="follow">
-          <%= t "buttons.follow" %>
-        </button>
-      </p>
+    <div class="panel-heading" id="profile">
+      <%= link_to_avatar @form_user, "avatar_user img-circle" %>
+      <hr/>
       <div class="information">
         <p>
           <span class="labels">
@@ -78,8 +74,7 @@
                 <p><%= render "addresses/sorting_address" %></p>
               </div>
             </div>
-            <%= render partial: "addresses/adds_by_province", collection: @addresses,
-              as: :adds_by_province %>
+            <%= render partial: "addresses/adds_by_province", collection: @addresses %>
             <%= paginate @addresses %>
           </div>
         </div>

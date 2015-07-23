@@ -13,18 +13,15 @@
     <div class="address-detail">
       <div class="list-info">
         <div class="row">
-          <div class="col-md-5">
-            <% if @address.user.avatar %>
-              <%= image_tag @address.user.avatar.url, class: "img-thumbnail" %>
-            <% else %>
-              <%= image_tag Settings.user.avatar_default, class: "img-thumbnail" %>
-            <% end %>
+          <div class="col-sm-5" id="fix_position_col_5">
+            <%= link_to_avatar @address.user, "img-thumbnail" %>
             <strong>
-              <%= link_to @address.user.name, user_path(@address.user) %>
+              <%= link_to @address.user.name, user_path(@address.user),
+                id: "fix_position_label" %>
             </strong>
           </div>
 
-          <div class="col-md-7">
+          <div class="col-sm-7">
             <p>
               <span class="labels">
                 <i class="glyphicon glyphicon-map-marker icon-map"

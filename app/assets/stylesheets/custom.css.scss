@@ -1236,15 +1236,13 @@ hr {
   position: relative;
   height: 200px;
   left: 5px;
-  width: auto;
+  width: 95%;
 }
 
 .information {
   position: relative;
   font-family: "times new roman", times, serif;
   font-size: 12.5px;
-  top: 30px;
-
 }
 
 #fix_size_image {
@@ -1312,7 +1310,7 @@ hr {
 
 #profile {
   position: relative;
-  height: 450px;
+  height: 400px;
   width: 240px;
   right: 15px;
 }
@@ -1504,4 +1502,21 @@ hr {
     right: 17px;
     bottom: 18.5px;
   }
+}
+
+#fix_position_col_5 {
+  position: relative;
+  top: 110px;
+  right: 15%;
+}
+
+#fix_position_label {
+  position: relative;
+  left: 50%;
+}
+
+#fix_avatar_on_header {
+  position: relative;
+  height: 25px;
+  width: 25px;
 }
