@@ -51,6 +51,10 @@ en:
     contact_input: "input your phone number or email"
     capacity_input: "capacity"
     description_input: "input your rental house description"
+    facility_input: "input facility"
+    address_input: "input your rental house address"
+    square_input: "square"
+    price_input: "price"
     description: "Description"
     add_address: "Add Address"
     new:
@@ -60,6 +64,7 @@ en:
     address_contact: "Address"
     phone: "Phone"
     number_room: "Number Rooms"
+    choose_main_image: "Choose this image is main image: "
   directions:
     travel_mode: "Mode of travel"
     driving: "DRIVING"
@@ -158,3 +163,4 @@ en:
     disconnected: "disconnected!"
     head: "Group chat history"
   see_all: "See all >>"
+  erorr: "The form contains"
