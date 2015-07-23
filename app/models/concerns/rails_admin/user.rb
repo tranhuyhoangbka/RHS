@@ -3,6 +3,13 @@ module RailsAdmin::User
 
   included do
     rails_admin do
+      list do
+        field :name
+        field :email
+        field :phone_number
+        field :role
+        field :created_at
+      end
       create do
         field :name
         field :email
@@ -14,7 +21,7 @@ module RailsAdmin::User
         field :address
         field :role, :enum do
           enum do
-            User::roles
+            User::roles.keys
           end
         end
       end

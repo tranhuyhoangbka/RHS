@@ -9,9 +9,8 @@ class AddressesController < ApplicationController
     @search = Address.search params[:q]
 
     @regions = []
-    Settings.special_locations.each do |pro| 
-    @regions << Address.by_province(pro.last)
-    end
+
+    Settings.special_locations.each{|pro| @regions << Address.by_province(pro.last)}
   end
 
   def show
