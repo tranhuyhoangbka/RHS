@@ -15,12 +15,10 @@
     <div id="header_wrapper" data-user-id="<%= current_user.nil? ? "" : current_user.id %>">
       <%= render "shared/header" %>
     </div>
-
     <div class="main-container">
       <div class="row">
         <%= render "shared/navbar" %>
       </div>
-
       <div class="row">
         <%= yield %>
       </div>

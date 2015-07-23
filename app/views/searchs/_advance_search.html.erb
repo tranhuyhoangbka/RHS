@@ -1,0 +1,37 @@
+<div class="row" id="content_advance_search">
+  <div class="wall">
+    <div class="col-sm-4">
+      <i class="glyphicon glyphicon-road"> <%= f.label :park %></i> 
+      <%= f.check_box :parking_in, {class: "checkbox park
+       fix_checkbox_position", id: "park1"}, 1, nil %><br>
+      <i class="glyphicon glyphicon-tint"> <%= f.label :air_conditioner %></i>
+      <%= f.check_box :air_conditioner_in, {class: "checkbox air_con 
+        fix_checkbox_position", id: "air_con1"}, 1, nil %><br>
+      <i class="glyphicon glyphicon-cd"> <%= f.label :ceiling_fan %></i>
+      <%= f.check_box :ceiling_fan_in, {class: "checkbox fan
+        fix_checkbox_position",  id: "fan1"}, 1, nil %><br>
+    </div>
+    <div class="col-sm-4">
+      <i class="glyphicon glyphicon-inbox"> <%= f.label :washing_machine %></i>
+      <%= f.check_box :washing_machine_in, {class: "checkbox wash 
+        fix_checkbox_position", id: "wash1"}, 1, nil %><br>
+      <i class="glyphicon glyphicon-modal-window"> <%= f.label :television %></i>
+      <%= f.check_box :television_in, {class: "checkbox tv
+        fix_checkbox_position", id: "tv1"}, 1, nil %><br>
+      <i class="glyphicon glyphicon-signal"> <%= f.label :network %></i>
+      <%= f.check_box :network_in, {class: "checkbox network
+        fix_checkbox_position", id: "network1"}, 1, nil %><br>
+    </div>
+    <div class="col-sm-4">
+      <i class="glyphicon glyphicon-unchecked"> <%= f.label :table %></i>
+      <%= f.check_box :table_in, {class: "checkbox tables
+        fix_checkbox_position", id: "table1"}, 1, nil %><br>
+      <i class="glyphicon glyphicon-bed"> <%= f.label :bed %></i>
+      <%= f.check_box :bed_in, {class: "checkbox bed
+        fix_checkbox_position", id: "bed1"}, 1, nil %><br>
+      <i class="glyphicon glyphicon-blackboard"> <%= f.label :chair %></i>
+      <%= f.check_box :chair_in, {class: "checkbox chair
+        fix_checkbox_position", id: "chair1"}, 1, nil %>
+    </div>
+  </div>
+</div>

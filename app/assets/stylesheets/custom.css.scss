@@ -637,31 +637,16 @@ select.form-control {
   appearance: none;
   height: 25px;
   padding: 2px;
+  font-size: 12px;
   background: image-url("arrow.png") no-repeat right;
   background-position: static;
-  background-size: 25px 25px;
+  background-size: 15px 25px;
 }
 
-#park1, #park2 {
+.fix_checkbox_label {
   position: absolute;
-  right: 55px;
+  left: 250px;
   display: block;
-}
-
-#park, #none {
- position: absolute;
- left: 25px;
-}
-
-#title {
-  position: relative;
-  height: 28px;
-  top: 6px;
-}
-
-#max_price, #max_facility, #max_square {
-  position: relative;
-  top: 8px;
 }
 
 .div-title {
@@ -698,7 +683,8 @@ select.form-control {
 }
 
 #search-panel {
-  margin-bottom: 15px;
+  position: relatetive;
+  height: 200px;
 }
 
 .tab-content {
@@ -1073,6 +1059,7 @@ select.form-control {
 #form-edit-address {
   background-color: white;
   border-radius: 5px;
+
   h3 {
     color: #337AB7 !important;
     font-family: Trocchi, serif !important;
@@ -1292,6 +1279,7 @@ hr {
     text-align: justify;
     color: rgb(255, 255, 255);
   }
+
 }
 
 #sort {
@@ -1352,6 +1340,7 @@ hr {
     left: 50px;
   }
 }
+
 .form-add-comment {
 
 }
@@ -1425,4 +1414,94 @@ hr {
 
 .icon-map:hover {
   cursor: pointer;
+}
+
+#row_search {
+  height: 140px;
+}
+
+#modal_submit_search {
+  position: relative;
+  right: 300px;
+  top: 10px;
+  width: 150px;
+}
+
+.btn_close {
+  position: relative;
+  left: 50px;
+  width: 150px;
+}
+
+#label_none {
+  position: relative;
+  bottom: 0.5px;
+  left: 70%;
+}
+
+#label_have {
+  position: relative;
+  bottom: 0.5px;
+  left: 180px;
+}
+
+.search {
+  width: 100%;
+  padding: 8px 5px 30px 5px;
+  border-radius: 5px;
+  padding: 8px 5px 20px 5px;
+  border-radius: 3px;
+  padding: 8px 5px 10px 5px;
+  background: #FFF;
+  border-bottom: solid 1px;
+  border-color: #cbd3d1;
+  height: 70%;
+
+  #col_keyword {
+    left: 3%;
+    bottom: 25px;
+  }
+
+  #col_square, #col_price {
+    left: 3%;
+  }
+
+  #advance_search {
+    position: relative;
+    left: 20px;
+  }
+
+  #sumbit_search {
+    position: relative;
+    right: 10%;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  .wall {
+    position: relative;
+    left: 3%;
+
+    #keyword {
+      position: relative;
+      width: 93%;
+    }
+  }
+
+  #address {
+    position: relative;
+    right: 10%;
+  }
+
+  #content_advance_search {
+    position: relative;
+    left: 5%;
+    display: none;
+  }
+
+  .fix_checkbox_position {
+    position: relative;
+    right: 17px;
+    bottom: 18.5px;
+  }
 }
