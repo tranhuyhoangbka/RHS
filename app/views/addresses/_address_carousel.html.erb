@@ -1,0 +1,30 @@
+<div id="address_carousel" class="carousel slide">
+  <div class="carousel-inner">
+    <% @addresses.each do |address| role="listbox" %>
+      <div class="item", id="fix_size_image"> 
+        <% if address.images.any? %>
+          <%=link_to image_tag(address.images.first.photo.url),
+            address_path(address) %>
+        <% else %>
+          <%=link_to image_tag(Settings.images.house_image),
+            address_path(address) %>
+        <% end %>
+        <div class="carousel-caption">
+          <h4><%= t "address.description" %></h4>
+          <p><%= address.description %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <a class="left carousel-control" href="#address_carousel" 
+    role="button" data-slide="prev">
+    <i class="glyphicon glyphicon-circle-arrow-left"
+    id="image_arrow_slide" aria-hidden="true"></i>
+  </a>
+  <a class="right carousel-control" href="#address_carousel"
+    role="button" data-slide="next">
+    <i class="glyphicon glyphicon-circle-arrow-right"
+      id="image_arrow_slide" aria-hidden="true"></i>
+  </a>
+</div>

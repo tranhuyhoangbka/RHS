@@ -655,13 +655,13 @@ select.form-control {
 
 #title {
   position: relative;
-  height: 34px;
+  height: 28px;
   top: 6px;
 }
 
 #max_price, #max_facility, #max_square {
   position: relative;
-  top: 10px;
+  top: 8px;
 }
 
 .div-title {
@@ -1104,6 +1104,7 @@ select.form-control {
   margin-right: 200px !important;
   }
 }
+
 .visit:visited {
   color: #D119FF;
 }
@@ -1217,5 +1218,113 @@ hr {
       max-height: 135px;
       margin-left: 150px;
     }
+  }
+}
+
+.avatar_user {
+  position: relative;
+  height: 200px;
+  left: 5px;
+  width: auto;
+}
+
+.information {
+  position: relative;
+  font-family: "times new roman", times, serif;
+  font-size: 12.5px;
+  top: 30px;
+
+}
+
+#fix_size_image {
+  height: 300px;
+
+  img {
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+  }
+}
+
+#image_arrow_slide {
+  position: relative;
+  top: 90px;
+  font-size: 40px;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  padding: 3px;
+  background: #333333;
+  background: rgba(0, 0, 0, 0.75);
+
+  h4, p {
+    line-height: 15px;
+    position: relative;
+    font-family: "times new roman", times, serif;
+    text-align: justify;
+    color: rgb(255, 255, 255);
+  }
+}
+
+#sort { 
+  position: relative;
+  width: 150px;
+  bottom: 10px;
+  font-size: 11.5px;
+}
+
+#sorting_label {
+  position: relative;
+  right: 72px;
+  top: 20px;
+}
+
+#retal_house_user {
+  position: relative;
+  top: 20px;
+  color: #337AB7 !important; 
+}
+
+#no_rental {
+  color: #337AB7;
+  font-family: Trocchi, serif !important;
+  font-size: 25px !important;
+  font-weight: normal !important;
+  line-height: 48px !important;
+  margin-bottom: 20px !important; 
+}
+
+#profile {
+  position: relative;
+  height: 450px;
+  width: 240px;
+  right: 15px; 
+}
+
+#follow {
+  position: relative;
+  top: 15px;
+}
+
+#result_sort {
+  position: relative;
+  bottom: 19.3px;
+  left: 95px;
+  color: #337AB7 !important;
+}
+
+#result_sorting {
+  color: #337AB7 !important;
+  position: relative;
+  left: 25px;
+
+  #result {
+    position: relative;
+    bottom: 19px;
+    left: 50px;
   }
 }

@@ -23,6 +23,7 @@
 //= require review
 //= require websocket_rails/main
 //= require custom_websocket
+//= require sort
 //= require superfish
 //= require hoverIntent
 //= require visited_news

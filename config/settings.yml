@@ -18,8 +18,8 @@ user:
 num_of_recent_addresses: 10
 num_of_show_location: 5
 num_of_address_by_regions: 5
-pages:
-  ten: 10
+pagination:
+  per_page: 10
 locations:
   bacgiang: "Bac Giang"
   backan: "Bac Kan"
@@ -178,5 +178,11 @@ chat:
     new_message: "new_message"
     connected: "connected"
     disconnected: "disconnected"
-pagination:
-  per_page: 10
+type:
+  title: "Title"
+  price_low_high: "Price: Low to High"
+  price_high_low: "Price: High to Low"
+  square_small_big: "Square: Small to Big"
+  square_big_small: "Square: Big to Small"
+  capacity_low_high: "Capicity: Low to High"
+  capacity_high_low: "Capicity: High to Low"

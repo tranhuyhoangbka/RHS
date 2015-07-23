@@ -174,3 +174,17 @@ en:
   see_all: "See all >>"
   erorr: "The form contains"
   show_on_map: "View on map"
+  user:
+    name: "Name: "
+    address: "Address: "
+    phone: "Phone: "
+    job: "Job: "
+    age: "Age: "
+  buttons:
+    follow: "Follow"
+  description:
+    rental_house: "Rental House: "
+    sorting_by: "Sorting by"
+    default: "Default Sorting"
+    no_rental_house: "No rental house information"
+    result: "Result: "
