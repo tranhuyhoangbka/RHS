@@ -1,8 +1,9 @@
-
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 body {
   padding-top: 60px;
-  background-color: #E6E6E6
+  background-color: #E6E6E6 !important;
 }
 
 h1 {
@@ -74,10 +75,6 @@ div.main-container {
 
 div.main-container header{
   /*margin-top: 50px; */
-}
-
-div.container {
-  width: 980px;
 }
 
 nav ul.nav li a{
@@ -611,12 +608,12 @@ select.form-control {
 }
 
 .panel-default > .panel-heading  {
-  background-color: #FFFFFF;
+  background-color: #FFFFFF !important;
   border-radius: 5px;
 }
 
 .navbar-default {
-  background-color: #FFFFFF;
+  background-color: #FFFFFF !important;
 }
 
 #search-panel {
@@ -698,4 +695,41 @@ select.form-control {
 
 .btn-primary {
   margin-bottom: 20px !important;
+}
+
+/* footer */
+
+#footer {
+  background-color: white;
+  margin-top: 10px;
+  height: 250px;
+
+  li a {
+    color: black;
+  }
+
+  #col-1 {
+    width: 20%;
+  }
+
+  #col-3 {
+    width: 22%;
+  }
+
+  #col-4 {
+    width: 28%;
+  }
+
+  .container {
+    width: 1070px;
+    padding: 15px 15px 15px;
+  }
+
+  h4 {
+    border-bottom: 1px solid rgb(203, 211, 209);
+  }
+
+  #fa-copyright {
+    margin-right: 2px;
+  }
 }

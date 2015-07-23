@@ -117,4 +117,24 @@ en:
     region: "Region"
     none: "None"
     park: "Park"
-  matin: "Ma Tin #"
+  new_code: "New code #"
+  website_info:
+    info: "Aboute website"
+    rules: "Website general rules"
+    security: "Security"
+    copyright: "Copyright informations"
+  use_website:
+    use: "How to use website"
+    add_new: "How to add new address"
+    search: "How to find informations"
+    account_info: "Manager your account"
+  social_link:
+    social: "Social link"
+    facebook: "Facebook"
+    google: "Google+"
+    twitter: "Twitter"
+  contact_info:
+    contact: "Contact with us"
+    hotline: "Holine: 0166778899"
+    email: "Email: Framgia@rentalhouse.com"
+    address: "Address: Keangnam Landmark Tower"
