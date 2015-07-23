@@ -1,4 +1,9 @@
-<%= f.label :photo %><br>
-<%= f.file_field :photo %>
-<%= f.check_box :_destroy %>
-<%= f.label :_destroy, t("Remove_Image") %>
+<div id="tab-pane-left">
+  <%= f.file_field :photo %>
+  <%= f.hidden_field :_destroy %>
+</div>
+<div id="tab-pane-right">
+  <%= link_to "", "javascript:void(0);",
+    onclick: "remove_fields(this)", class: "glyphicon glyphicon-trash",
+      title: t("address.remove_image"), rel: "tooltip" %>
+</div>

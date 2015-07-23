@@ -1,5 +1,4 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+
 
 body {
   padding-top: 60px;
@@ -10,6 +9,22 @@ h1 {
   font-size: 3em;
   margin-bottom: 30px;
   text-align: center;
+}
+
+h3 {
+  color: #337AB7 !important;
+  font-family: Trocchi, serif !important;
+  font-size: 45px !important;
+  font-weight: normal !important;
+  line-height: 48px !important;
+  margin-bottom: 20px !important;
+}
+
+.address-input {
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 200px;
+  float: right;
 }
 
 /* header */
@@ -98,7 +113,7 @@ html, body{
   margin-top: 7px;
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
-  width: 400px;
+  width: 300px;
 }
 
 #pac-input:focus {
@@ -125,19 +140,27 @@ html, body{
   width: 345px;
 }
 
-#left-con {
-  width: 19%;
-  height: 90%;
-  float: left;
-  margin-top: 50px;
-  border: 1px solid red;
+#images-form {
+  width: 638px;
+  margin: 0px 0px 20px 0px;
+  padding: 5px;
+}
+
+.btn-group {
+  margin: 20px 0px 20px 0px;
+}
+
+#map-add-address {
+  width: 638px;
+  height: 500px;
+  margin-bottom: 30px;
 }
 
 #map-canvas {
   width: 100%;
   height: 100%;
   float: right;
-  padding: 5px;
+  padding: 0px;
 }
 
 #mylocation {
@@ -189,7 +212,6 @@ html, body{
   width: 980px;
   min-width: 980px;
   margin: 0 auto;
-
   .main-header {
     height: 80px;
   }
@@ -550,7 +572,7 @@ select.form-control {
 
 #park, #none {
  position: absolute;
- left: 25px; 
+ left: 25px;
 }
 
 #title {
@@ -599,4 +621,81 @@ select.form-control {
 
 #search-panel {
   margin-bottom: 15px;
+}
+
+.tab-content {
+  display: inline-block;
+  width: 638px;
+  margin-top: 15px;
+  height: 50px;
+  #tab-pane-left {
+  width: 600px;
+  float: left;
+  }
+  #tab-pane-right {
+  width: 38px;
+  float: right;
+  }
+  .glyphicon-trash {
+  display: none;
+  }
+}
+
+.tab-content:hover .glyphicon-trash {
+  display: block;
+}
+
+.remove-fields-botton {
+  float: right;
+}
+
+#image-fields .fields input{
+  display: inline-block;
+}
+
+#buton-add-image {
+  padding: 6px 12px;
+  width: 130px;
+  border-radius: 4px;
+  border: 1px solid #9D9D9D;
+  background: #337AB7;
+  margin-bottom: 15px;
+  a {
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 14px;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+}
+
+#buton-add-image:hover {
+  border: 1px solid #2E6DA4;
+  background: #3A5795;
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+
+.glyphicon-trash {
+  float: right;
+  color: #FFF;
+  background-color: #D9534F;
+  border-color: #D43F3A;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 10px 12px;
+}
+
+.glyphicon-trash:hover {
+  float: right;
+  color: #FFF;
+  background-color: #D43F3A;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  margin-bottom: 20px !important;
 }

@@ -40,11 +40,19 @@ en:
     search: "Search"
     holder: "Enter address here"
   address:
+    add_image: Add Images
+    upload_image: "Upload Images"
+    remove_image: "Remove this image"
     latitude: "Latitude"
     longitude: "Longitude"
     capacity: "Capacity"
     contact: "Contact"
+    add_new_address: "Add New Address"
+    contact_input: "input your phone number or email"
+    capacity_input: "capacity"
+    description_input: "input your rental house description"
     description: "Description"
+    add_address: "Add Address"
     new:
       name: "Create New Address"
       button: "Create New Address"
