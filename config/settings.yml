@@ -16,14 +16,10 @@ image_sample:
 user:
   avatar_default: "avatar_default.jpg"
 num_of_recent_addresses: 10
+num_of_show_location: 5
+num_of_address_by_regions: 5
 pages:
   ten: 10
-special_locations:
-  hanoi: "Ha Noi"
-  haiphong: "Ha Phong"
-  hue: "Hue"
-  HCM: "HCM"
-  danang: "Da Nang"
 locations:
   bacgiang: "Bac Giang"
   backan: "Bac Kan"

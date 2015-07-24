@@ -5,7 +5,8 @@
     <div class="div-title">
       <span class="glyphicon glyphicon-home"></span>
       <strong><%= add.first.province %></strong>
-      <span id="link"><%= link_to "See more >>", "#" %></span>
+      <span id="link"><%= link_to t("see_all"),
+        addresses_path(province: add.first.province) %></span>
     </div>
     <%= render partial: "adds_by_province", collection: add %>
   </div>
