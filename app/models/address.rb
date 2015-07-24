@@ -22,4 +22,8 @@ class Address < ActiveRecord::Base
     .order(created_at: :desc).limit(Settings.num_of_adds_in_regions)}
 
   enum type: [:apartment, :villa]
+
+  def average_point
+    reviews.average :point
+  end
 end

@@ -28,6 +28,7 @@ gem "rails_admin_map_field", git: "https://github.com/HieuMeo/RailsAdminMapField
 gem "fancybox2-rails"
 gem "bootstrap-social-rails"
 gem "font-awesome-rails"
+gem "remotipart"
 
 group :development, :test do
   gem "dotenv-rails"
