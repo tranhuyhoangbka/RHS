@@ -1,0 +1,33 @@
+<% if review.user %>
+  <li id="<%= dom_id review %>" class="review">
+    <div class="row">
+      <div class="col-md-1">
+        <%= link_to_avatar review.user %>
+      </div>
+      <div class="col-md-11">
+        <div class="wrap-content-review">
+          <strong>
+            <%= link_to review.user.name, "#", class: "user_name" %>
+          </strong>
+          <span>
+            <%= time_ago_in_words review.created_at %> <%= t "review.ago" %>
+          </span>
+          <div class="review-content">
+            <%= review.content %>
+          </div>
+          <div class="list-features">
+            <%= link_to t("edit"), "#" if can? :update, review %>
+            <%= link_to t("delete"), address_review_path(@address, review),
+              method: :delete, data: {confirm: t("you_sure")},
+                remote: true if can? :destroy, review %>
+            <%= link_to_count_comments review %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="icon-colspan">
+      <i class="glyphicon glyphicon-menu-up" title="hide"></i><br>
+      <i class="glyphicon glyphicon-menu-down" title="show"></i>
+    </div>
+  </li>
+<% end %>

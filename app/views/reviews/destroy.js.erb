@@ -1,0 +1,4 @@
+$("#review_<%= @review.id %>").remove()
+$("#review-number").text("<%= pluralize @review.address.reviews.count, t('review.review_label') %>")
+$("#show-score + span").text("(<%= pluralize @review.address.reviews.count, t('review.vote') %>)")
+$(".icon-colspan i:last-child").hide()

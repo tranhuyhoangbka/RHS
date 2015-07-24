@@ -30,6 +30,7 @@ en:
   can_account: "Cancel account"
   uphappy: "Unhappy?"
   edit: "Edit"
+  delete: "Delete"
   forgot_password: "Forgot your password?"
   confirm_instructions: "Didn't receive confirmation instructions?"
   unlock_instructions: "Didn't receive unlock instructions?"
@@ -155,6 +156,8 @@ en:
     here: "here"
     add_new: "Add a new review"
     upload_title: "Upload photo"
+    comment: "Comment"
+    ago: "ago"
   chat:
     show_chat_dialog: "Show chat dialog"
     hide_chat_dialog: "Hide chat dialog"
