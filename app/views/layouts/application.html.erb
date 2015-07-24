@@ -9,7 +9,7 @@
     <link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" type="text/css">
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body onLoad="initialize()">
     <div id="header_wrapper" data-user-id="<%= current_user.nil? ? "" : current_user.id %>">
       <%= render "shared/header" %>
     </div>

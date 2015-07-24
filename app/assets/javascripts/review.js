@@ -20,7 +20,7 @@ $(document).ready(function(){
     $("#selected-file-name").text($(this).val());
     $(".form-actions").css("padding-top", "8px");
   });
-  
+
   $(".form-actions input").click(function(){
     var notice = "";
     if($(".text-area-wrapper #review_content").val().trim().length === 0){
