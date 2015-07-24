@@ -11,8 +11,15 @@ FactoryGirl.define do
     user
     region
     square {rand 10..60}
-    parking true
-    facility {Faker::Lorem.paragraph 1}
+    parking {[true, false].sample}
+    network {[true, false].sample}
+    table {[true, false].sample}
+    chair {[true, false].sample}
+    airConditioner {[true, false].sample}
+    television {[true, false].sample}
+    washingMachine {[true, false].sample}
+    bed {[true, false].sample}
+    ceilingFan {[true, false].sample}
     price {rand(1..10)*1000000}
     
     after(:build) do |address|

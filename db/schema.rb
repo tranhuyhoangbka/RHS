@@ -11,27 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723095518) do
+ActiveRecord::Schema.define(version: 20150724025508) do
 
   create_table "addresses", force: :cascade do |t|
-    t.float    "lng",         limit: 24
-    t.float    "lat",         limit: 24
-    t.integer  "capacity",    limit: 4
-    t.string   "contact",     limit: 255
-    t.text     "description", limit: 65535
-    t.integer  "type",        limit: 4
-    t.string   "address",     limit: 255
-    t.float    "rating",      limit: 24
-    t.integer  "user_id",     limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.string   "title",       limit: 255
-    t.integer  "region_id",   limit: 4
-    t.string   "facility",    limit: 255
-    t.boolean  "parking",     limit: 1
-    t.float    "square",      limit: 24
-    t.float    "price",       limit: 24
-    t.string   "image",       limit: 255
+    t.float    "lng",            limit: 24
+    t.float    "lat",            limit: 24
+    t.integer  "capacity",       limit: 4
+    t.string   "contact",        limit: 255
+    t.text     "description",    limit: 65535
+    t.integer  "type",           limit: 4
+    t.string   "address",        limit: 255
+    t.float    "rating",         limit: 24
+    t.integer  "user_id",        limit: 4
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "title",          limit: 255
+    t.integer  "region_id",      limit: 4
+    t.boolean  "parking",        limit: 1
+    t.float    "square",         limit: 24
+    t.float    "price",          limit: 24
+    t.string   "image",          limit: 255
+    t.boolean  "airConditioner", limit: 1
+    t.boolean  "ceilingFan",     limit: 1
+    t.boolean  "bed",            limit: 1
+    t.boolean  "washingMachine", limit: 1
+    t.boolean  "television",     limit: 1
+    t.boolean  "network",        limit: 1
+    t.boolean  "table",          limit: 1
+    t.boolean  "chair",          limit: 1
   end
 
   add_index "addresses", ["user_id"], name: "index_addresses_on_user_id", using: :btree
