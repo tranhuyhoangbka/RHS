@@ -21,12 +21,12 @@ FactoryGirl.define do
     bed {[true, false].sample}
     ceiling_fan {[true, false].sample}
     price {rand(1..10)*1000000}
-    
+
     after(:build) do |address|
       address.reviews << FactoryGirl.build(:review, address: address)
       Settings.image_sample.each do |url|
-        address.images << FactoryGirl.build(:image, address: address, 
-          photo: Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, url))))
+        address.images << FactoryGirl.build(:image, address: address,
+                                            photo: Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, url))))
       end
     end
   end

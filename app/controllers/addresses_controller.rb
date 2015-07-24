@@ -11,9 +11,8 @@ class AddressesController < ApplicationController
 
     @regions = []
 
-    if params[:province].nil? 
-      Region.get_special.each{|pro| @regions << Address.by_province(pro
-        .province).last(Settings.num_of_address_by_regions)}
+    if params[:province].nil?
+      Region.homes.each{|region| @regions << region.addresses.last(5)}
     else
       @regions << Address.by_province(params[:province])
     end
@@ -42,11 +41,7 @@ class AddressesController < ApplicationController
 
   private
   def address_params
-    params.require(:address).permit :id, :lng, :lat, :capacity, :contact,
-      :description, :type, :facility, :square, :address, :price, :parking,
-      :air_conditioner, :ceilling_fan, :bed, :washing_machine, :television,
-      :network, :table, :chair,
-      images_attributes: [:id, :photo, :main, :_destroy]
+    params.require(:address).permit Address::PARAMS_ATTRIBUTES
   end
 
   def find_address
