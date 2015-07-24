@@ -1,49 +1,116 @@
-<%= form_for @address, html: {multipart: true} do |f| %>
-  <div id="input-form">
-    <p>
-      <%= f.label :capacity %>
-      <%= f.text_field :capacity, class: "address-input",
-        placeholder: t("address.capacity_input") %>
-    </p>
-    <p>
-      <%= f.label :contact %>
-      <%= f.text_field :contact, class: "address-input",
-        placeholder: t("address.contact_input") %>
-    </p>
-    <p>
-      <%= f.label :description %>
-      <%= f.text_area :description, class: "address-input",
-        placeholder: t("address.description_input") %>
-    </p>
-  </div>
-
-  <div id="upload-images-form">
-    <div class="btn-group">
-      <a class="btn-action-show-images btn btn-info toggler disabled"
-        data-toggle="modal">
-        <i class="glyphicon glyphicon-chevron-right"></i>
-      </a>
-
-      <%= link_to_add_fields t("address.add_image"), f, :images %>
+<%= form_for @address, html: {multipart: true}, method: :post do |f| %>
+  <div class="panel-heading">
+    <%= render 'shared/error_messages', object: f.object %>
+    <div id="input-form">
+      <div id="input-form-text">
+        <p>
+          <%= f.label :capacity %>
+          <%= f.text_field :capacity, class: "address-input",
+            placeholder: t("address.capacity_input") %>
+        </p>
+        <p>
+          <%= f.label :contact %>
+          <%= f.text_field :contact, class: "address-input",
+            placeholder: t("address.contact_input") %>
+        </p>
+        <p>
+          <%= f.label :address %>
+          <%= f.text_field :address, class: "address-input",
+            placeholder: t("address.address_input") %>
+        </p>
+        <p>
+          <%= f.label :square %>
+          <%= f.text_field :square, class: "address-input",
+            placeholder: t("address.square_input") %>
+        </p>
+        <p>
+          <%= f.label :price %>
+          <%= f.text_field :price, class: "address-input",
+          placeholder: t("address.price_input") %>
+        </p>
+        <p>
+          <%= f.label :description %>
+          <%= f.text_area :description, class: "textarea",
+            placeholder: t("address.description_input") %>
+        </p>
+      </div>
+      <div id="input-form-checkbox">
+        <table>
+          <tr>
+            <td>
+              <%= f.label :parking %>
+              <%= f.check_box :parking, class: "parking-checkbox" %>
+            </td>
+            <td>
+              <%= f.label :air_conditioner %>
+              <%= f.check_box :air_conditioner, class: "parking-checkbox" %>
+            </td>
+            <td>
+              <%= f.label :ceiling_fan %>
+              <%= f.check_box :ceiling_fan, class: "parking-checkbox" %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= f.label :bed %>
+              <%= f.check_box :bed, class: "parking-checkbox" %>
+            </td>
+            <td>
+              <%= f.label :washing_machine %>
+              <%= f.check_box :washing_machine, class: "parking-checkbox" %>
+            </td>
+            <td>
+              <%= f.label :television %>
+              <%= f.check_box :television, class: "parking-checkbox" %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= f.label :network %>
+              <%= f.check_box :network, class: "parking-checkbox" %>
+            </td>
+            <td>
+              <%= f.label :table %>
+              <%= f.check_box :table, class: "parking-checkbox" %>
+            </td>
+            <td>
+              <%= f.label :chair %>
+              <%= f.check_box :chair, class: "parking-checkbox" %>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
 
-    <div id="images-form" style="display: none">
-      <ul class="nav nav-tabs" id="tab-add-image">
-      </ul>
-      <div class="tab-content"></div>
-    </div>
-  </div>
+    <div id="upload-images-form">
+      <div class="btn-group">
+        <a class="btn-action-show-images btn btn-info toggler disabled"
+          data-toggle="modal">
+          <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
 
-  <div id="map-add-address" style="display: block">
-    <div id="latlng-box">
-      <%= f.label :latitude %>
-      <%= f.text_field :lat, id: "form-lat", class: "latlng-input" %>
-      <%= f.label :longitude %>
-      <%= f.text_field :lng, id: "form-lng", class: "latlng-input" %>
+        <%= link_to_add_fields t("address.add_image"), f, :images %>
+      </div>
+
+      <div id="images-form" style="display: none">
+        <ul class="nav nav-tabs" id="tab-add-image">
+        </ul>
+        <div class="tab-content"></div>
+      </div>
     </div>
-    <input id="pac-input" class="controls" type="text">
-    <div id="map-canvas"></div>
+
+    <div id="map-add-address" style="display: block">
+      <div id="latlng-box">
+        <%= f.label :latitude %>
+        <%= f.text_field :lat, id: "form-lat", class: "latlng-input" %>
+        <%= f.label :longitude %>
+        <%= f.text_field :lng, id: "form-lng", class: "latlng-input" %>
+      </div>
+      <input id="pac-input" class="controls" type="text">
+      <div id="map-canvas"></div>
+    </div>
+    <br>
+    <%= f.submit t("address.add_address"),
+      class: "btn btn-primary" %>
   </div>
-  <br>
-  <%= f.submit t("address.add_address"), class: "btn btn-primary" %>
 <% end %>

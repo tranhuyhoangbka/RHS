@@ -78,6 +78,18 @@ function add_fields(link, association, content) {
   $(".btn-action-show-images").find("i").removeClass("glyphicon-chevron-right").addClass("glyphicon-chevron-down");
 
   $("#images-form").show("slow");
+
+  $("#" + new_id).change(function() {
+    var filename = $(this).find("input[type=file]").val();
+    var lastIndex = filename.lastIndexOf("\\");
+    if (lastIndex >= 0) {
+      filename = filename.substring(lastIndex + 1);
+    }
+    if (filename === "" || filename === null )
+      $("a[href=#" + $(this).attr("id") + "]").html("New Image");
+    else
+      $("a[href=#" + $(this).attr("id") + "]").html(filename);
+  });
 }
 
 $(".tooltip").tooltip();

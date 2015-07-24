@@ -34,7 +34,7 @@ class AddressesController < ApplicationController
     @address = Address.new address_params
 
     if @address.save
-      redirect_to root_path, notice: t("address.create")
+      redirect_to new_address_path, notice: t("address.create")
     else
       render :new
     end
@@ -43,7 +43,10 @@ class AddressesController < ApplicationController
   private
   def address_params
     params.require(:address).permit :id, :lng, :lat, :capacity, :contact,
-      :description, :type, images_attributes: [:id, :photo, :_destroy]
+      :description, :type, :facility, :square, :address, :price, :parking,
+      :air_conditioner, :ceilling_fan, :bed, :washing_machine, :television,
+      :network, :table, :chair,
+      images_attributes: [:id, :photo, :main, :_destroy]
   end
 
   def find_address

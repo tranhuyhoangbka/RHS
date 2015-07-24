@@ -1,6 +1,12 @@
 <div id="tab-pane-left">
-  <%= f.file_field :photo %>
-  <%= f.hidden_field :_destroy %>
+  <div class: "choose-address-image">
+    <%= f.file_field :photo  %>
+    <%= f.hidden_field :_destroy %>
+  </div>
+  <div class: "set-avatar-checkbox">
+    <span><%= t "address.choose_main_image" %></span>
+    <%= f.check_box :main %>
+  </div>
 </div>
 <div id="tab-pane-right">
   <%= link_to "", "javascript:void(0);",

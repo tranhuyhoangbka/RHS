@@ -13,15 +13,6 @@ h1 {
   text-align: center;
 }
 
-h3 {
-  color: #337AB7 !important;
-  font-family: Trocchi, serif !important;
-  font-size: 45px !important;
-  font-weight: normal !important;
-  line-height: 48px !important;
-  margin-bottom: 20px !important;
-}
-
 .address-input {
   max-width: 500px;
   min-width: 500px;
@@ -722,6 +713,15 @@ select.form-control {
   #tab-pane-left {
   width: 600px;
   float: left;
+  display: inline-block;
+    .choose-address-image {
+      margin-top: 10px;
+    }
+    .set-avatar-checkbox{
+      margin-top: 10px;
+      float: right !important;
+      width: 20px;
+    }
   }
   #tab-pane-right {
   width: 38px;
@@ -998,4 +998,48 @@ select.form-control {
   font-size: 12px;
   font-color: #0086b3;
   font-family: "Times New Roman", Times, serif;
+}
+
+.error-messages {
+  color: red;
+}
+
+.set-avatar-checkbox {
+  float: right;
+  margin-bottom: 10px !important;
+}
+
+#form-add-address {
+  background-color: white;
+  border-radius: 5px;
+  h3 {
+    color: #337AB7 !important;
+    font-family: Trocchi, serif !important;
+    font-size: 30px !important;
+    font-weight: normal !important;
+    line-height: 48px !important;
+    margin-left: 20px !important;
+  }
+}
+
+#input-form-text {
+  min-height: 250px !important;
+  display:inline-block;
+  .textarea {
+  min-height:100px;
+  display:inline-block;
+  float: right;
+  min-width: 500px;
+  max-width: 500px;
+  display:inline-block;
+  overflow:auto;
+  }
+}
+
+#input-form-checkbox {
+  margin-top: 30px;
+  .parking-checkbox {
+  float: right;
+  margin-right: 200px !important;
+  }
 }

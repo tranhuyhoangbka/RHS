@@ -2,6 +2,14 @@ class Address < ActiveRecord::Base
   include RailsAdmin::Address
   attr_accessor :google_map
 
+  validates :capacity, presence: true
+  validates :contact, presence: true
+  validates :facility, presence: true
+  validates :address, presence: true
+  validates :square, presence: true
+  validates :price, presence: true
+  validates :description, presence: true
+
   paginates_per Settings.pages.ten
 
   belongs_to :user
