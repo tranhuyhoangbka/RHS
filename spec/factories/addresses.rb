@@ -15,11 +15,11 @@ FactoryGirl.define do
     network {[true, false].sample}
     table {[true, false].sample}
     chair {[true, false].sample}
-    airConditioner {[true, false].sample}
+    air_conditioner {[true, false].sample}
     television {[true, false].sample}
-    washingMachine {[true, false].sample}
+    washing_machine {[true, false].sample}
     bed {[true, false].sample}
-    ceilingFan {[true, false].sample}
+    ceiling_fan {[true, false].sample}
     price {rand(1..10)*1000000}
     
     after(:build) do |address|

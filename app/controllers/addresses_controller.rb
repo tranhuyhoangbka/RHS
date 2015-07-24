@@ -11,7 +11,12 @@ class AddressesController < ApplicationController
 
     @regions = []
 
-    Settings.special_locations.each{|pro| @regions << Address.by_province(pro.last)}
+    if params[:province].nil? 
+      Region.get_special.each{|pro| @regions << Address.by_province(pro
+        .province).last(Settings.num_of_address_by_regions)}
+    else
+      @regions << Address.by_province(params[:province])
+    end
   end
 
   def show
