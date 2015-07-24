@@ -42,12 +42,12 @@ $(document).ready(function(){
 
       if(min_square === "" && max_square === "" &&
         min_facility == "" && max_facility === "" &&
-        min_price === "" && max_price === "" && 
+        min_price === "" && max_price === "" &&
         address === "" && title === "" && !$(".checkbox").is(":checked")){
-          event.preventDefault(); 
+          event.preventDefault();
       }
   });
-  
+
   $("select").change(function(){
     var id = $(this).attr("id");
 
@@ -97,7 +97,7 @@ function min_change(name){
 
   for(var i = 0; i < max_lenght; i++){
     var text_collect = parseInt($("#max_" + name).find("option").eq(i).text(), 10);
-        
+
     if(text_select > text_collect)
       $("#max_" + name).find("option").eq(i).hide();
     else

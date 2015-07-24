@@ -81,3 +81,20 @@ function add_fields(link, association, content) {
 }
 
 $(".tooltip").tooltip();
+
+$(document).ready(function() {
+  $(".btn-action-show-images").on("click", function(e) {
+    var icon = $(e.currentTarget).find("i");
+    if (icon.hasClass("glyphicon-chevron-down")) {
+      icon.removeClass("glyphicon-chevron-down").
+      addClass("glyphicon-chevron-right");
+    }
+    else if (icon.hasClass("glyphicon-chevron-right")) {
+      icon.removeClass("glyphicon-chevron-right").
+      addClass("glyphicon-chevron-down");
+    }
+
+    var imgForm = $("#images-form");
+    imgForm.toggle("slow");
+  });
+});

@@ -20,9 +20,12 @@
       </span> |
       <%= t "contact" %>: <span class="contact"><%= adds_by_province.contact %></span>
     </p>
-    <div>
+    <div class="more-info">
+      <span class="glyphicon glyphicon-map-marker left icon-map"
+        data-address-id="<%= adds_by_province.id %>" aria-hidden="true">
+      </span>
       <span class="right">
-        <%= adds_by_province.created_at %>
+        <%= adds_by_province.created_at.to_date.to_formatted_s(:long_ordinal) %>
       </span>
     </div>
   </div>
