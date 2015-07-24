@@ -11,8 +11,7 @@
   <% else %>
     <p class="text-warning text-center">
       <%= t "review.alert_login1" %>
-      <%= link_to t("review.here"), new_user_session_path(
-                                    return: address_url(@address)) %>
+      <%= link_to t("review.here"), new_user_session_path %>
       <%= t "review.alert_login2" %>.
     </p>
   <% end %>
