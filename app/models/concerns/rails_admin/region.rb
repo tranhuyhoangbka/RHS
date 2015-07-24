@@ -5,6 +5,7 @@ module RailsAdmin::Region
     rails_admin do
       edit do
         field :province
+        field :is_home
       end
     end
   end

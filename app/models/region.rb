@@ -3,6 +3,5 @@ class Region < ActiveRecord::Base
 
   has_many :addresses, dependent: :destroy
 
-  scope :get_special, -> {where(special_location: true)
-    .limit(Settings.num_of_show_location)}
+  scope :homes, ->{where(is_home: true).limit(Settings.num_of_show_location)}
 end

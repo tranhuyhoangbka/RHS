@@ -1,6 +1,6 @@
 namespace :db do
   desc "make sample data by rake task"
-  task make_data: :environment do
+  task remake_data: :environment do
     Rake::Task["db:reset"].invoke
 
     puts "Create admin user"

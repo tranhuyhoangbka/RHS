@@ -37,7 +37,7 @@ module RailsAdmin::Address
         field :description
         field :type, :enum do
           enum do
-            Address::types
+            Address::types.keys
           end
         end
         field :address

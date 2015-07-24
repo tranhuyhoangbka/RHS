@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724063757) do
+ActiveRecord::Schema.define(version: 20150724065906) do
 
   create_table "addresses", force: :cascade do |t|
     t.float    "lng",             limit: 24
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20150724063757) do
     t.datetime "updated_at",                    null: false
     t.string   "title",           limit: 255
     t.integer  "region_id",       limit: 4
-
     t.boolean  "parking",         limit: 1
     t.float    "square",          limit: 24
     t.float    "price",           limit: 24
@@ -43,15 +42,6 @@ ActiveRecord::Schema.define(version: 20150724063757) do
   end
 
   add_index "addresses", ["user_id"], name: "index_addresses_on_user_id", using: :btree
-
-  create_table "average_caches", force: :cascade do |t|
-    t.integer  "rater_id",      limit: 4
-    t.integer  "rateable_id",   limit: 4
-    t.string   "rateable_type", limit: 255
-    t.float    "avg",           limit: 24,  null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "comments", force: :cascade do |t|
     t.string   "content",    limit: 255
@@ -87,47 +77,14 @@ ActiveRecord::Schema.define(version: 20150724063757) do
     t.string   "photo",      limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.boolean  "main",       limit: 1
+    t.boolean  "is_main",    limit: 1
   end
-
-  create_table "overall_averages", force: :cascade do |t|
-    t.integer  "rateable_id",   limit: 4
-    t.string   "rateable_type", limit: 255
-    t.float    "overall_avg",   limit: 24,  null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "rates", force: :cascade do |t|
-    t.integer  "rater_id",      limit: 4
-    t.integer  "rateable_id",   limit: 4
-    t.string   "rateable_type", limit: 255
-    t.float    "stars",         limit: 24,  null: false
-    t.string   "dimension",     limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "rates", ["rateable_id", "rateable_type"], name: "index_rates_on_rateable_id_and_rateable_type", using: :btree
-  add_index "rates", ["rater_id"], name: "index_rates_on_rater_id", using: :btree
-
-  create_table "rating_caches", force: :cascade do |t|
-    t.integer  "cacheable_id",   limit: 4
-    t.string   "cacheable_type", limit: 255
-    t.float    "avg",            limit: 24,  null: false
-    t.integer  "qty",            limit: 4,   null: false
-    t.string   "dimension",      limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type", using: :btree
 
   create_table "regions", force: :cascade do |t|
-    t.string   "province",         limit: 255
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.boolean  "special_location", limit: 1
+    t.string   "province",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.boolean  "is_home",    limit: 1
   end
 
   create_table "reviews", force: :cascade do |t|

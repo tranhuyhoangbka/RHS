@@ -22,6 +22,7 @@ module RailsAdmin::User
         field :role, :enum do
           enum do
             User::roles.keys
+            [["normal", "normal"], ["admin", "admin"]]
           end
         end
       end

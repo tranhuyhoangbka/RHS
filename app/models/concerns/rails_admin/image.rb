@@ -7,6 +7,7 @@ module RailsAdmin::Image
 
       edit do
         field :photo
+        field :is_main
       end
     end
   end
