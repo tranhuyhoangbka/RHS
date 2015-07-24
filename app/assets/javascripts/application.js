@@ -21,6 +21,8 @@
 //= require gmap_custom
 //= require search
 //= require review
+//= require websocket_rails/main
+//= require custom_websocket
 
 $(document).ready(function(){
   $("#myModalName").html($("#new_address").data("name"));
@@ -97,7 +99,6 @@ function min_change(name){
 
   for(var i = 0; i < max_lenght; i++){
     var text_collect = parseInt($("#max_" + name).find("option").eq(i).text(), 10);
-
     if(text_select > text_collect)
       $("#max_" + name).find("option").eq(i).hide();
     else

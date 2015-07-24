@@ -130,7 +130,7 @@ squares:
   85.0: 85
   90.0: 90
   100.0: 100
-facilities: 
+facilities:
   1: 1
   2: 2
   3: 3
@@ -175,3 +175,9 @@ images:
   house_image: "house-thumb.jpg"
 review:
   upload_icon: "upload_img.png"
+chat:
+  img_size: "20x20"
+  type:
+    new_message: "new_message"
+    connected: "connected"
+    disconnected: "disconnected"

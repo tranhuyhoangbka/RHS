@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20150724025508) do
     t.string   "photo",      limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "room_id",    limit: 4
   end
 
   create_table "regions", force: :cascade do |t|
@@ -97,6 +98,19 @@ ActiveRecord::Schema.define(version: 20150724025508) do
 
   add_index "reviews", ["address_id"], name: "index_reviews_on_address_id", using: :btree
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
+
+  create_table "rooms", force: :cascade do |t|
+    t.float    "square",     limit: 24
+    t.boolean  "parking",    limit: 1
+    t.integer  "facility",   limit: 4
+    t.float    "price",      limit: 24
+    t.string   "image",      limit: 255
+    t.integer  "address_id", limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "rooms", ["address_id"], name: "index_rooms_on_address_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   limit: 255
@@ -131,4 +145,5 @@ ActiveRecord::Schema.define(version: 20150724025508) do
   add_foreign_key "identities", "users"
   add_foreign_key "reviews", "addresses"
   add_foreign_key "reviews", "users"
+  add_foreign_key "rooms", "addresses"
 end
