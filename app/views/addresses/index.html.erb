@@ -5,15 +5,27 @@
     <div class="div-title">
       <span class="glyphicon glyphicon-home"></span>
       <strong><%= add.first.province %></strong>
-      <span id="link"><%= link_to t("see_all"),
-        addresses_path(province: add.first.province) %></span>
+      <span id="link"><%= link_to "See more >>", "#" %></span>
     </div>
     <%= render partial: "adds_by_province", collection: add %>
   </div>
 <% end %>
 
+<div id="visited">
+  <div id="visited-title">
+    <span class="fa fa-history"></span>
+    <strong id="strong"><%= t "address.visited_link" %></strong>
+    <hr>
+  </div>
+</div>
+
+<div style="display: none">
+  <%= render "visited" %>
+</div>
+
 <% content_for :right do %>
   <div id="right-content">
+
     <div id="bnt-box" class="row">
       <button class="btn btn-danger col-md-10 col-md-offset-1">
         <%= t "button.add_address" %>
@@ -33,5 +45,3 @@
     </div>
   </div>
 <% end %>
-
-<div id="map-canvas"></div>

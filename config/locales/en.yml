@@ -57,6 +57,7 @@ en:
     price_input: "price"
     description: "Description"
     add_address: "Add Address"
+    visited_new: "Visited News"
     new:
       name: "Create New Address"
       button: "Create New Address"
