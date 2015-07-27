@@ -1,6 +1,6 @@
-<%= form_for @address, html: {multipart: true}, method: :post do |f| %>
+<%= form_for @address do |f| %>
   <div class="panel-heading">
-    <%= render 'shared/error_messages', object: f.object %>
+    <%= render "shared/error_messages", object: f.object %>
     <div id="input-form">
       <div id="input-form-text">
         <p>
@@ -110,7 +110,7 @@
       <div id="map-canvas"></div>
     </div>
     <br>
-
-    <%= f.submit t("address.add_address"), class: "btn btn-primary" %>
+    <%= f.submit (f.object.new_record? ? t("address.add_address") :
+      t("address.save_address")), class: "btn btn-primary"%>
   </div>
 <% end %>

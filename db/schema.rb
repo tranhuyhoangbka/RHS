@@ -81,10 +81,10 @@ ActiveRecord::Schema.define(version: 20150724065906) do
   end
 
   create_table "regions", force: :cascade do |t|
-    t.string   "province",         limit: 255
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.boolean  "special_location", limit: 1
+    t.string   "province",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.boolean  "is_home",    limit: 1
   end
 
   create_table "reviews", force: :cascade do |t|

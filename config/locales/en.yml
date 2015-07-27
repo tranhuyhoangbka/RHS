@@ -57,7 +57,11 @@ en:
     price_input: "price"
     description: "Description"
     add_address: "Add Address"
+    edit_addess: "Form Edit Address"
+    save_address: "Save change"
     visited_new: "Visited News"
+    updated: "Address was successfully updated."
+    destroy: "Address was successfully destroyed."
     new:
       name: "Create New Address"
       button: "Create New Address"

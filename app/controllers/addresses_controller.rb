@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :find_address, only: [:show, :edit, :destroy]
+  before_action :find_address, only: [:show, :edit, :destroy, :update]
 
   def index
     @addresses = Address.all.page params[:page]
@@ -24,6 +24,9 @@ class AddressesController < ApplicationController
     @review = @address.reviews.build
   end
 
+  def edit
+  end
+
   def new
     @address = Address.new
     @image = @address.images.build
@@ -37,6 +40,19 @@ class AddressesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
+    if @address.update address_params
+      redirect_to @address, notice: t("address.updated")
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @address.destroy
+    redirect_to addresses_url, notice: t("address.destroyed")
   end
 
   private

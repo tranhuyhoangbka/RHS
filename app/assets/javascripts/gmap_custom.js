@@ -26,7 +26,15 @@ function initialize() {
   directionsDisplay.setMap(map)
 
   map = new google.maps.Map(document.getElementById("map-canvas"), option);
+
   var marker;
+
+  var position = new google.maps.LatLng(lat.value, lng.value);
+
+  marker = new google.maps.Marker({position: position, map: map});
+  marker.setMap(map);
+  map.setCenter(position);
+  map.setZoom(14);
 
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
@@ -89,7 +97,7 @@ function initialize() {
     lng.value = event.latLng.lng();
   });
 
-  if(navigator.geolocation) {
+  if(lat.value === "" || lng.value === "") {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
@@ -105,7 +113,10 @@ function initialize() {
       handleNoGeolocation(true);
     });
   } else {
-    handleNoGeolocation(false);
+    marker = new google.maps.Marker({position: position, map: map});
+    marker.setMap(map);
+    map.setCenter(position);
+    map.setZoom(14);
   }
 }
 
