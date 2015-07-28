@@ -11,7 +11,7 @@ class Identity < ActiveRecord::Base
     identity = create(uid: auth.uid, provider: auth.provider) if identity.nil?
     identity.accesstoken = auth.credentials.token
     identity.refreshtoken = auth.credentials.refresh_token
-
+    
     auth_attributes.each do |method_name|
       identity.send "#{method_name}=", auth.info.send("#{method_name}")
     end
@@ -22,7 +22,7 @@ class Identity < ActiveRecord::Base
   end
 
   private
-  def auth_attributes
+  def self.auth_attributes
     [:name, :email, :nickname, :image, :phone]
   end
 end
