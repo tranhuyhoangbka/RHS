@@ -24,3 +24,5 @@
 //= require websocket_rails/main
 //= require custom_websocket
 //= require visited_news.js
+//= require superfish
+//= require hoverIntent
