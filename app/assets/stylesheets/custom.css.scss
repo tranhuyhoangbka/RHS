@@ -1074,6 +1074,19 @@ select.form-control {
   }
 }
 
+#form-edit-address {
+  background-color: white;
+  border-radius: 5px;
+  h3 {
+    color: #337AB7 !important;
+    font-family: Trocchi, serif !important;
+    font-size: 30px !important;
+    font-weight: normal !important;
+    line-height: 48px !important;
+    margin-left: 20px !important;
+  }
+}
+
 #input-form-text {
   min-height: 250px !important;
   display:inline-block;
