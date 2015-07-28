@@ -19,7 +19,7 @@ GIT
 
 GIT
   remote: https://github.com/HieuMeo/RailsAdminMapField.git
-  revision: cfb31e89d8c56a067b23dc53281b533212c26b81
+  revision: e9dff039c48c508b1117dcb96cd1702b68f44c32
   specs:
     rails_admin_map_field (0.0.1)
       rails (>= 3.0.0)

@@ -17,8 +17,7 @@ $(document).ready(function() {
   function save_link(visit) {
     var adds_by_province = visit.data("adds-by-province");
 
-    if (typeof localStorage["provinces"] !== "undefined"
-      && localStorage["provinces"] !== "undefined") {
+    if (typeof localStorage["provinces"] !== "undefined") {
       provinces = JSON.parse(localStorage.provinces);
     }
 
@@ -29,7 +28,8 @@ $(document).ready(function() {
   }
 
   function show_visited() {
-    provinces = JSON.parse(localStorage.provinces);
+    if (typeof localStorage["provinces"] !== "undefined")
+      provinces = JSON.parse(localStorage.provinces);
 
     for(var i = (provinces.length - 1); i >= 0; i--) {
       var d = new Date(provinces[i].created_at);
@@ -55,6 +55,9 @@ $(document).ready(function() {
 
       contact = html.find("span.contact");
       contact.html(provinces[i].contact);
+
+      marker = html.find("span.glyphicon-map-marker");
+      marker.attr("data-address-id", provinces[i].id);
 
       date = html.find("span.right");
       date.html(d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate()
