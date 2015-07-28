@@ -1,25 +1,28 @@
-$("#review_content").val("");
+$("#review-list").append("<%= j render @review %>")
+$(".icon-colspan i:last-child").hide()
+$("#review_content").val("")
 
 $("#show-score").raty({
   readOnly: true,
   score: <%= @review.address.average_point %>
-});
+})
 
-$("#show-score+span").text("(<%= pluralize @review.address.reviews.size,
-                                 t('review.vote') %>)");
+$("#show-score+span").text("(<%= pluralize @review.address.reviews.count,
+                                 t('review.vote') %>)")
 
-$("#review-number").text("<%= pluralize @review.address.reviews.size,
-                              t('review.review_label') %>");
-$("#rate").raty({score: 0});
-$("#selected-file-name").text("");
-$(".form-actions").css("padding-top", "0px");
-$("#review_point").val("");
+$("#review-number").text("<%= pluralize @review.address.reviews.count,
+                              t('review.review_label') %>")
+
+$("#rate").raty({score: 0})
+$("#selected-file-name").text("")
+$(".form-actions").css("padding-top", "0px")
+$("#review_point").val("")
 
 $(".rate-address #rate img").click(function(){
-  $("#review_point").val($(".rate-address #rate input").val());
-});
+  $("#review_point").val($(".rate-address #rate input").val())
+})
 
 $("#choose-file").change(function(){
-  $("#selected-file-name").text($(this).val());
-  $(".form-actions").css("padding-top", "8px");
-});
+  $("#selected-file-name").text($(this).val())
+  $(".form-actions").css("padding-top", "8px")
+})

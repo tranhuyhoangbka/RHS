@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  post "/rate" => "rater#create", :as => "rate"
-
   mount RailsAdmin::Engine => "/admin", as: "rails_admin"
 
   root "addresses#index"
@@ -16,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :addresses do
-    resources :reviews, only: :create
+    resources :reviews, only: [:create, :destroy]
   end
   resources :searchs, only: :index
   resources :maps, only: :show

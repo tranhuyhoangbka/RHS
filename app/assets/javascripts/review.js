@@ -34,4 +34,6 @@ $(document).ready(function(){
       return false;
     }
   });
+
+  $(".icon-colspan i:last-child").hide();
 });

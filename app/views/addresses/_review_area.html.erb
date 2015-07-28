@@ -5,14 +5,19 @@
   <p class="line"></p>
 </div>
 <div class="review-body">
-  <h2><%= t "review.add_new" %></h2>
-  <% if user_signed_in? %>
-    <%= render "review_form" %>
-  <% else %>
-    <p class="text-warning text-center">
-      <%= t "review.alert_login1" %>
-      <%= link_to t("review.here"), new_user_session_path %>
-      <%= t "review.alert_login2" %>.
-    </p>
-  <% end %>
+  <div class="add-review">
+    <h2><%= t "review.add_new" %></h2>
+    <% if user_signed_in? %>
+      <%= render "review_form" %>
+    <% else %>
+      <p class="text-warning text-center">
+        <%= t "review.alert_login1" %>
+        <%= link_to t("review.here"), new_user_session_path %>
+        <%= t "review.alert_login2" %>.
+      </p>
+    <% end %>
+  </div>
+  <ul id="review-list" class="list-unstyled">
+    <%= render @reviews %>
+  </ul>
 </div>

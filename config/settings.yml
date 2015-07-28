@@ -171,6 +171,7 @@ images:
   house_image: "house-thumb.jpg"
 review:
   upload_icon: "upload_img.png"
+  zero: 0
 chat:
   img_size: "20x20"
   type:

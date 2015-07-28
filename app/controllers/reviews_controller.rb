@@ -1,14 +1,18 @@
 class ReviewsController < ApplicationController
-  before_action :find_address, :authenticate_user!
+  before_action :authenticate_user!
+  before_action :find_address
+  before_action :find_review, except: :create
+
+  respond_to :js
 
   def create
     @review = @address.reviews.build review_params
     @review.user = current_user
-    if @review.save
-      respond_to do |format|
-        format.js
-      end
-    end
+    @review.save
+  end
+
+  def destroy
+    @review.destroy
   end
 
   private
@@ -18,5 +22,9 @@ class ReviewsController < ApplicationController
 
   def find_address
     @address = Address.find params[:address_id]
+  end
+
+  def find_review
+    @review = @address.reviews.find params[:id]
   end
 end
