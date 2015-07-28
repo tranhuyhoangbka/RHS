@@ -1,0 +1,18 @@
+<% if @review.errors.any? %>
+  alert("<%= raw @review.errors.full_messages.join("\n") %>")
+<% else %>
+  $("#edit_review<%= @review.id %>").remove()
+  $("#review_<%= @review.id %>").html("<%= j render @review %>")
+  $("#review_<%= @review.id %>").css("margin-left", "0px")
+  $(".icon-colspan i:last-child").hide()
+  $("#review_<%= @review.id %> .list-features a").first().css("color", "rgba(0, 39, 59, 0.35)")
+  $("#show-score").raty({
+    readOnly: true,
+    score: <%= @review.address.average_point %>
+  })
+
+  $("#review_<%= @review.id %> .show-point").raty({
+    readOnly: true,
+    score: <%= @review.point %>
+  });
+<% end %>

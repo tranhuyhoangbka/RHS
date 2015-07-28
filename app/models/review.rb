@@ -11,4 +11,6 @@ class Review < ActiveRecord::Base
   validates :point, presence: true
 
   mount_uploader :image, PhotoUploader
+
+  paginates_per Settings.pagination.per_page
 end

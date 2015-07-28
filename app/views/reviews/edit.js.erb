@@ -1,0 +1,34 @@
+$("#review_<%= @review.id %>").append("<div><%= j render("form") %></div>")
+
+$("#review_<%= @review.id %> #rate").raty({
+  score: <%= @review.point %>,
+  half: true,
+  click: function(score, evt) {
+    $("#review_<%= @review.id %> #review_point").val(score)
+  }
+})
+$("#review_<%= @review.id %> .list-features a").first().css("color", "#2e9fff")
+
+$("#review_<%= @review.id %> .list-features a").click(function(){
+  if($("#review_<%= @review.id %> .edit_review").length > 0){
+    return false;
+  }
+});
+
+$("<section><button type='button' class='btn btn-default cancel'>Cancel</button></section>").insertAfter($("#review_<%= @review.id %> .rate-address"))
+$("#review_<%= @review.id %> #review_point").val("<%= @review.point %>")
+$("#review_<%= @review.id %> #choose-file").hide()
+
+$("#review_<%= @review.id %> .upload-img img").click(function(){
+  $("#review_<%= @review.id %> #choose-file").click();
+})
+
+$("#review_<%= @review.id %> #choose-file").change(function(){
+  $("#review_<%= @review.id %> #selected-file-name").text($(this).val())
+  $("#review_<%= @review.id %> input[type='submit'], #review_<%= @review.id %> button.cancel").css("margin-top", "8px")
+})
+
+$("button.cancel").click(function(){
+  $(this).closest(".edit_review").remove()
+  $("#review_<%= @review.id %> .list-features a").first().css("color", "rgba(0, 39, 59, 0.35)")
+})

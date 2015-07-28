@@ -21,8 +21,12 @@ class AddressesController < ApplicationController
   def show
     @address = Address.find params[:id]
     @recent_addresses = Address.last Settings.num_of_recent_addresses
-    @reviews = @address.reviews
+    @reviews = @address.reviews.page params[:page]
     @review = @address.reviews.build
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def edit

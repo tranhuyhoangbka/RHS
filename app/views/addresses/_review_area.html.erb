@@ -20,4 +20,8 @@
   <ul id="review-list" class="list-unstyled">
     <%= render @reviews %>
   </ul>
+  <div class="next-previous-links">
+    <%= link_to_previous_page @reviews, t("Previous"), class: "btn btn-primary", remote: true %>
+    <%= link_to_next_page @reviews, t("Next"), class: "btn btn-primary", remote: true %>
+  </div>
 </div>

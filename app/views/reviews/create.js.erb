@@ -26,3 +26,8 @@ $("#choose-file").change(function(){
   $("#selected-file-name").text($(this).val())
   $(".form-actions").css("padding-top", "8px")
 })
+
+$("#review_<%= @review.id %> .show-point").raty({
+  readOnly: true,
+  score: <%= @review.point %>
+});

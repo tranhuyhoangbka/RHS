@@ -178,3 +178,5 @@ chat:
     new_message: "new_message"
     connected: "connected"
     disconnected: "disconnected"
+pagination:
+  per_page: 10

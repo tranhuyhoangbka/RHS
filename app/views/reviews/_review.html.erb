@@ -12,11 +12,15 @@
           <span>
             <%= time_ago_in_words review.created_at %> <%= t "review.ago" %>
           </span>
+          <div class="show-point" data-rate="<%= review.point %>"></div>
+          <div class="image-review">
+            <%= image_tag review.image.url if review.image.present? %>
+          </div>
           <div class="review-content">
             <%= review.content %>
           </div>
           <div class="list-features">
-            <%= link_to t("edit"), "#" if can? :update, review %>
+            <%= link_to t("edit"), [:edit, @address, review], remote: true if can? :update, review %>
             <%= link_to t("delete"), address_review_path(@address, review),
               method: :delete, data: {confirm: t("you_sure")},
                 remote: true if can? :destroy, review %>

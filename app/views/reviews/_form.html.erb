@@ -1,0 +1,21 @@
+<%= form_for [@address, @review], html: {multipart: true}, remote: true do |f| %>
+  <div class="text-area-wrapper">
+    <%= f.text_area :content, class: "form-control",
+                              placeholder: t("review.placeholder") %>
+    <%= f.hidden_field :point, value: "" %>
+  </div>
+  <div class="post-action">
+    <section class="upload-img">
+      <%= image_tag Settings.review.upload_icon, title: t("review.upload_title") %>
+      <%= f.file_field :image, id: "choose-file" %>
+    </section>
+    <section class="rate-address">
+      <div id="rate"></div>
+    </section>
+    <section class="form-actions">
+      <%= f.submit class: "btn btn-success" %>
+    </section>
+    <div class="clearfix"></div>
+    <p id="selected-file-name"></p>
+  </div>
+<% end %>
