@@ -93,6 +93,7 @@ en:
     err_msg: "Wrong username og password"
   price: "Price: "
   contact: "Contact: "
+  capacity: "Capacity: "
   square: "Square: "
   province_city: "Province/City "
   recent_address: "Recent added address"
@@ -168,3 +169,4 @@ en:
     head: "Group chat history"
   see_all: "See all >>"
   erorr: "The form contains"
+  show_on_map: "View on map"

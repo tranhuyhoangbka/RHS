@@ -5,7 +5,10 @@
     <div class="div-title">
       <span class="glyphicon glyphicon-home"></span>
       <strong><%= add.first.province %></strong>
-      <span id="link"><%= link_to "See more >>", "#" %></span>
+      <% if params[:province].nil? %>
+        <span id="link_see_all"><%= link_to t("see_all"),
+          addresses_path(province: add.first.province) %></span>
+      <% end %>
     </div>
     <%= render partial: "adds_by_province", collection: add %>
   </div>
@@ -15,7 +18,6 @@
   <div id="visited-title">
     <span class="fa fa-history"></span>
     <strong id="strong"><%= t "address.visited_link" %></strong>
-    <hr>
   </div>
 </div>
 

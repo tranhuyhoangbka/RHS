@@ -227,7 +227,6 @@ html, body{
   padding: 8px 5px 20px 5px;
   border-radius: 3px;
   padding: 8px 5px 10px 5px;
-  margin-bottom: 7px;
   background: #FFF;
   border-bottom: solid 1px;
   border-color: #cbd3d1;
@@ -253,9 +252,6 @@ html, body{
 
     .capacity {
       color: #DA0802
-    }
-    .contact {
-      color: #666;
     }
     .province_city {
       color: #666;
@@ -631,7 +627,7 @@ legend {
   padding-right: 1px;
 }
 
-#fa-usd {
+.second-icon {
   margin-left: 5px;
 }
 
@@ -678,7 +674,7 @@ select.form-control {
     margin-left: 5px;
   }
 
-  #link {
+  #link_see_all {
     float: right;
     margin-right: 5px;
   }
@@ -1109,6 +1105,25 @@ hr {
 }
 
 #visited-title {
-  padding-top: 2px;
-  border-radius: 3px;
+  border-bottom: soild 1px;
+  padding: 10px 0px 10px 0px;
+  border-bottom: solid 1px;
+  border-color: rgb(203, 211, 209);
+
+  span {
+    margin-left: 5px;
+  }
+}
+
+#first-column {
+  padding: 0px;
+}
+
+#fix-square {
+  font-size: 13px;
+  padding-left: 2px;
+}
+
+#fix-marker {
+  margin-left: -2px; 
 }
