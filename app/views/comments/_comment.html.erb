@@ -1,0 +1,29 @@
+<%= div_for comment do %>
+  <div class="row">
+    <div class="col-md-1 avatar-wrap">
+      <%= link_to_avatar comment.user %>
+    </div>
+    <div class="col-md-11 content-wrap">
+      <div class="wrap-content-comment">
+        <strong>
+          <%= link_to comment.user.name, user_path(id: comment.user.id), class: "user_name" %>
+        </strong>
+        <span>
+          <%= time_ago_in_words comment.created_at %> <%= t "review.ago" %>
+        </span>
+        <div class="img-comment">
+          <%= image_tag comment.image.url if comment.image.present? %>
+        </div>
+        <div class="comment-content">
+          <%= comment.content %>
+        </div>
+        <div class="list-features">
+          <%= link_to t("edit"), [:edit, @review, comment],
+            remote: true if can? :update, comment %>
+          <%= link_to t("delete"), [@review, comment], method: :delete, data: {
+            confirm: t("you_sure")}, remote: true if can? :destroy, comment %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -956,7 +956,7 @@ select.form-control {
           position: absolute;
           width: 40px;
           right: -15px;
-          top: 0px;
+          top: 5px;
           color: rgba(0, 39, 59, 0.35);
           font-size: 15px;
           display: none;
@@ -1202,6 +1202,30 @@ hr {
     }
   }
 }
+.comment-list {
+  margin: 12px 0px 8px 15px;
+  a[rel="next"] {
+    font-size: 13px !important;
+  }
+  .comment {
+    margin-bottom: 15px;
+    .wrap-content-comment {
+      margin-top: -7px;
+    }
+  }
+  .avatar-wrap {
+    img {
+      width: 40px !important;
+      height: 40px !important;
+    }
+  }
+  .list-features {
+    margin-top: 0px !important;
+    a {
+      font-size: 13px !important;
+    }
+  }
+}
 
 .wrap-content-review {
   .show-point {
@@ -1270,7 +1294,7 @@ hr {
   }
 }
 
-#sort { 
+#sort {
   position: relative;
   width: 150px;
   bottom: 10px;
@@ -1286,7 +1310,7 @@ hr {
 #retal_house_user {
   position: relative;
   top: 20px;
-  color: #337AB7 !important; 
+  color: #337AB7 !important;
 }
 
 #no_rental {
@@ -1295,14 +1319,14 @@ hr {
   font-size: 25px !important;
   font-weight: normal !important;
   line-height: 48px !important;
-  margin-bottom: 20px !important; 
+  margin-bottom: 20px !important;
 }
 
 #profile {
   position: relative;
   height: 450px;
   width: 240px;
-  right: 15px; 
+  right: 15px;
 }
 
 #follow {
@@ -1327,4 +1351,78 @@ hr {
     bottom: 19px;
     left: 50px;
   }
+}
+.form-add-comment {
+
+}
+
+#new_comment {
+  textarea {
+    margin: 10px 0px 0px 0px;
+    height: 35px;
+    max-width: 500px;
+    min-height: 35px;
+    max-height: 136px;
+    min-width: 500px;
+    width: 500px;
+  }
+  .control-area {
+    float: right;
+    img {
+      width: 25px !important;
+      height: 25px !important;
+      margin: 13px 30px 0px 0px;
+    }
+    input {
+      margin: 12px 10px 0px 0px;
+      margin-bottom: 0px !important;
+    }
+  }
+}
+.glyphicon-triangle-top:hover {
+  cursor: pointer;
+}
+
+.edit_comment {
+  margin-top: 4px;
+  textarea {
+    height: 37px;
+    max-width: 432px;
+    min-height: 37px;
+    min-width: 432px;
+    width: 432px;
+  }
+  .control-area {
+    float: right;
+    img {
+      width: 25px !important;
+      height: 25px !important;
+      margin: 13px 30px 0px 0px;
+    }
+    button.cancel {
+      margin-top: 13px;
+    }
+    input {
+      margin: 12px 10px 0px 0px;
+      margin-bottom: 0px !important;
+    }
+  }
+}
+
+.img-comment img {
+  width: auto !important;
+  height: auto !important;
+  margin: 9px 0px 9px 120px;
+  max-width: 135px !important;
+  max-height: 135px !important;
+  min-width: 30px !important;
+  min-height: 30px !important;
+}
+
+.new_comment {
+  margin-bottom: 13px;
+}
+
+.icon-map:hover {
+  cursor: pointer;
 }

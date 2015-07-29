@@ -7,7 +7,7 @@
       <div class="col-md-11">
         <div class="wrap-content-review">
           <strong>
-            <%= link_to review.user.name, "#", class: "user_name" %>
+            <%= link_to review.user.name, user_path(id: review.user.id), class: "user_name" %>
           </strong>
           <span>
             <%= time_ago_in_words review.created_at %> <%= t "review.ago" %>
@@ -26,6 +26,9 @@
                 remote: true if can? :destroy, review %>
             <%= link_to_count_comments review %>
           </div>
+          <div class="form-add-comment">
+          </div>
+          <div class="comment-list"></div>
         </div>
       </div>
     </div>

@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   resources :addresses do
     resources :reviews, only: [:create, :edit, :update, :destroy]
   end
+
+  resources :reviews, only: :none do
+    resources :comments, except: [:show, :new]
+  end
+
   resources :searchs, only: :index
   resources :maps, only: :show
   resources :users

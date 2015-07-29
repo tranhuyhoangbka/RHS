@@ -12,5 +12,5 @@ class Review < ActiveRecord::Base
 
   mount_uploader :image, PhotoUploader
 
-  paginates_per Settings.pagination.per_page
+  paginates_per Settings.pagination.review.per_page
 end
