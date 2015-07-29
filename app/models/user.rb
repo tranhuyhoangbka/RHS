@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :identities
+  has_many :chats
 
   enum role: [:normal, :admin]
 
