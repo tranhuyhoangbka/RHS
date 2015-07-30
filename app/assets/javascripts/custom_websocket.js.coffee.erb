@@ -16,6 +16,7 @@ class @ChatApp
           </div>
           <div class="message-container-left">
             <div class="col-md-9 message-content-left">
+              <b>#{response.user.name} : </b>
               #{response.message.content}
             </div>
           </div>
@@ -37,7 +38,6 @@ class @ChatApp
     @setListener()
 
   initState: ->
-    console.log("<%= image_path "chat-left-arrow.png" %>")
     if @user_id == ""
       $("#message-input-field").prop 'placeholder', 'Login to chat'
       $("#message-input-field").prop 'disabled', 'true'
