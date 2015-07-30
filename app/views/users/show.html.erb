@@ -1,0 +1,98 @@
+<div class="col-xs-3">
+  <div class="panel​​ panel-default">
+    <div class="panel-heading" id="profile">  
+      <%= image_tag Settings.user.avatar_default, class: "avatar_user img-circle" %>
+      <p>
+        <button type="button" class="btn btn-warning btn-block" id="follow">
+          <%= t "buttons.follow" %>
+        </button>
+      </p>
+      <div class="information">
+        <p>
+          <span class="labels">
+            <i class="glyphicon glyphicon-user"></i>
+            <%= t "user.name" %>
+          </span>
+          <span class="info-line"><%= @user.name %></span>
+        </p>
+        <p>
+          <span class="labels">
+            <i class="glyphicon glyphicon-certificate"></i>
+            <%= t "user.age" %>
+          </span>
+          <span class="info-line"><%= @user.age %></span>
+        </p>
+        <p>
+          <span class="labels">
+            <i class="glyphicon glyphicon-briefcase"></i>
+            <%= t "user.job" %>
+          </span>
+          <span class="info-line"><%= @user.job %></span>
+        </p>
+        <p>
+          <span class="labels">
+            <i class="glyphicon glyphicon-map-marker"></i>
+            <%= t "user.address" %>
+          </span>
+          <span class="info-line"><%= @user.address %></span>
+        </p>
+        <p>
+          <span class="labels">
+            <i class="glyphicon glyphicon-earphone"></i>
+            <%= t "user.phone" %>
+          </span>
+          <span class="info-line"><%= @user.phone_number %></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-xs-9">
+  <% unless @addresses.blank? %>
+    <div class="row">
+      <div class="panel​​ panel-default">
+        <div class="panel-heading">
+          <%= render "addresses/address_carousel" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" id="fix-index-column">
+        <div class="panel​​ panel-default">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-9">
+                <h4 id="retal_house_user">
+                  <i class="glyphicon glyphicon-home"></i>
+                  <%= t "description.rental_house" %>
+                  <%= @user.name %>
+                </h4><br>
+                <% unless @sort.blank? %>
+                  <div id="result_sorting">
+                    <%= t "description.result" %>
+                    <div id="result"><%= @sort["type"]%></div>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-xs-3">
+                <p><%= render "addresses/sorting_address" %></p>
+              </div>
+            </div>
+            <%= render partial: "addresses/adds_by_province", collection: @addresses,
+              as: :adds_by_province %>
+            <%= paginate @addresses %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="panel​​ panel-default">
+      <div class="panel-heading">
+        <h4 id="no_rental">
+          <i class="glyphicon glyphicon-home"></i>
+          <%= t "description.no_rental_house" %>
+        </h4>
+      </div>
+    </div>
+  <% end %>
+</div>

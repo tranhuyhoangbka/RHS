@@ -25,6 +25,7 @@ $(document).ready(function() {
     }
   }
 
+
   function max_change(name) {
     var text_select = parseInt($("#max_" + name + " option:selected").text(), 10);
     var min_lenght = $("#min_"+ name +" option").size();
@@ -93,4 +94,3 @@ $(document).ready(function() {
       format_square(name);
   });
 });
-

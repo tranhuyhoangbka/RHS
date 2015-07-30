@@ -10,5 +10,8 @@ namespace :db do
     Settings.locations.each do |location|
       FactoryGirl.create :region, province: location.last
     end
+
+    puts "Create 50 rental of one own user"
+    50.times{FactoryGirl.create :address, region: Region.first, user: User.second}
   end
 end

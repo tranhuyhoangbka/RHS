@@ -9,7 +9,7 @@ class Address < ActiveRecord::Base
   validates :price, presence: true
   validates :description, presence: true
 
-  paginates_per Settings.pages.ten
+  paginates_per Settings.pagination.per_page
 
   belongs_to :user
   belongs_to :region
@@ -27,6 +27,26 @@ class Address < ActiveRecord::Base
   scope :by_province, ->province{joins(:region).where "regions.province = ?", province}
 
   enum type: [:apartment, :villa]
+
+    
+  scope :order_by_colunm, ->object do
+    case object
+    when Settings.type.title
+      order :title
+    when Settings.type.price_low_high
+      order "price ASC"
+    when Settings.type.price_high_low
+      order "price DESC"
+    when Settings.type.square_small_big
+      order "square ASC"
+    when Settings.type.square_big_small
+      order "square DESC"
+    when Settings.type.capacity_low_high
+      order "capacity ASC"
+    when Settings.type.capacity_high_low
+      order "capacity DESC"
+    end
+  end
 
   def average_point
     reviews.average :point

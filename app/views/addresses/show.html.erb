@@ -19,7 +19,9 @@
             <% else %>
               <%= image_tag Settings.user.avatar_default, class: "img-thumbnail" %>
             <% end %>
-            <strong><a href="#"><%= @address.user.name %></a></strong>
+            <strong>
+              <%= link_to @address.user.name, user_path(@address.user) %>
+            </strong>
           </div>
 
           <div class="col-md-7">

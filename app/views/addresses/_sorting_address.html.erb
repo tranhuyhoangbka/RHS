@@ -1,0 +1,6 @@
+<h5 id="sorting_label"><%= t "description.sorting_by" %>:</h5>
+<%= form_for :type, url: user_path, method: :get do |f| %>
+  <%= f.collection_select :type, Settings.type, :last, :last,
+    {include_blank: t("description.default")},
+    {class: "form-control", id: "sort"} %>
+<% end %>
