@@ -1,0 +1,28 @@
+var number_review = <%= @reviews.count %>
+$("#review-list").html("<%= j (render @reviews) %>")
+$(".next-previous-links").html("<%= j (link_to_previous_page @reviews, t("Previous"), class: "btn btn-primary", remote: true) %>")
+$(".next-previous-links").append(" <%= j (link_to_next_page @reviews, t("Next"), class: "btn btn-primary", remote: true) %>")
+
+$(".show-point").raty({
+  readOnly: true,
+  score: function() {
+    return $(this).data("rate")
+  }
+})
+
+if(number_review > 3){
+  $("html, body").animate({scrollTop : 900}, 1500)
+}
+$(".icon-colspan i:last-child").hide()
+
+$(".icon-colspan .glyphicon-menu-up").click(function(){
+  $(this).closest(".review").find(".review-content, .list-features, .edit_review, .image-review, .show-point").hide();
+  $(this).hide();
+  $(this).nextAll("i").show();
+});
+
+$(".icon-colspan .glyphicon-menu-down").click(function(){
+  $(this).closest(".review").find(".review-content, .list-features, .edit_review, .image-review, .show-point").show();
+  $(this).hide();
+  $(this).prevAll("i").show();
+});

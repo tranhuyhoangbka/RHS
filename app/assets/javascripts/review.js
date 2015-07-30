@@ -11,6 +11,13 @@ $(document).ready(function(){
     score: $("#show-score").attr("data-score")
   });
 
+  $(".show-point").raty({
+    readOnly: true,
+    score: function() {
+      return $(this).data("rate");
+    }
+  });
+
   $("#choose-file").hide();
   $(".upload-img img").click(function(){
     $("#choose-file").click();
@@ -36,4 +43,16 @@ $(document).ready(function(){
   });
 
   $(".icon-colspan i:last-child").hide();
+
+  $(".icon-colspan .glyphicon-menu-up").click(function(){
+    $(this).closest(".review").find(".review-content, .list-features, .edit_review, .image-review, .show-point").hide();
+    $(this).hide();
+    $(this).nextAll("i").show();
+  });
+
+  $(".icon-colspan .glyphicon-menu-down").click(function(){
+    $(this).closest(".review").find(".review-content, .list-features, .edit_review, .image-review, .show-point").show();
+    $(this).hide();
+    $(this).prevAll("i").show();
+  });
 });

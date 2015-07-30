@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :addresses do
-    resources :reviews, only: [:create, :destroy]
+    resources :reviews, only: [:create, :edit, :update, :destroy]
   end
   resources :searchs, only: :index
   resources :maps, only: :show

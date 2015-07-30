@@ -1138,5 +1138,84 @@ hr {
 }
 
 #fix-marker {
-  margin-left: -2px; 
+  margin-left: -2px;
+}
+
+.next-previous-links {
+  text-align: center;
+}
+
+.edit_review {
+  width: 500px;
+  margin: 10px 0px 0px 70px;
+  max-width: 500px;
+
+  #review_content {
+    width: 500px;
+    max-width: 500px;
+    overflow: auto;
+  }
+  .post-action {
+    border: 1px solid #ccd3d7;
+    border-top: none;
+    border-radius: 6px;
+    padding-top: 8px;
+    section {
+      float: left;
+    }
+    .upload-img {
+      width: 30px;
+      margin-left: 8px;
+      img {
+        margin-top: 5px;
+        width: 25px !important;
+        height: 25px !important;
+      }
+    }
+    .rate-address {
+      width: 125px;
+      margin-left: 30px;
+      #rate {
+        margin-top: 5px;
+        img {
+          width: 20px !important;
+          height: 20px !important;
+        }
+      }
+    }
+    .rate-address + section button {
+      margin: 1px 0px 0px 82px;
+      font-weight: bold;
+      background: #E0E0E2;
+      height: 34px;
+    }
+    .form-actions {
+      width: 135px;
+      input[type="submit"] {
+        background: none repeat scroll 0 0 #4466aa;
+        border: medium none;
+        color: #fff;
+        font-weight: bold;
+        margin: 2px 0 0 13px;
+      }
+    }
+  }
+}
+
+.wrap-content-review {
+  .show-point {
+    margin-bottom: 12px;
+    img {
+      width: 15px !important;
+      height: 15px !important;
+    }
+  }
+  .image-review {
+    margin-bottom: 9px;
+    img {
+      max-width: 135px;
+      max-height: 135px;
+      margin-left: 150px;
+    }
+  }
 }
