@@ -45,13 +45,13 @@ $(document).ready(function(){
   $(".icon-colspan i:last-child").hide();
 
   $(".icon-colspan .glyphicon-menu-up").click(function(){
-    $(this).closest(".review").find(".review-content, .list-features, .edit_review, .image-review, .show-point").hide();
+    $(this).closest(".review").find(".review-content, .list-features, .edit_review, .image-review, .show-point, .comment-list, .new_comment, a[rel='next']").hide();
     $(this).hide();
     $(this).nextAll("i").show();
   });
 
   $(".icon-colspan .glyphicon-menu-down").click(function(){
-    $(this).closest(".review").find(".review-content, .list-features, .edit_review, .image-review, .show-point").show();
+    $(this).closest(".review").find(".review-content, .list-features, .edit_review, .image-review, .show-point, .comment-list, .new_comment, a[rel='next']").show();
     $(this).hide();
     $(this).prevAll("i").show();
   });

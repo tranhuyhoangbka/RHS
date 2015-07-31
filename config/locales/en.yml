@@ -168,6 +168,7 @@ en:
     ago: "ago"
   comment:
     placeholder: "Your comment"
+    cancel: "Cancel"
   chat:
     show_chat_dialog: "Show chat dialog"
     hide_chat_dialog: "Hide chat dialog"

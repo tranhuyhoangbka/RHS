@@ -1,4 +1,5 @@
-$("#review_<%= @review.id %> .comment-list").html("<%= j render @review.comments %>")
-$("#review_<%= @review.id %> .list-features").first().find("a").last().
+var current_review = "#review_<%= @review.id %>"
+$(current_review + " .comment-list").html("<%= j render @review.comments %>")
+$(current_review + " .list-features").first().find("a").last().
   text("<%= @review.comments.any? ? pluralize(@review.comments.count, t("review.comment")) :
     "#{Settings.review.zero} #{t("review.comment")}" %>")

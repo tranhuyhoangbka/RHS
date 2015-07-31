@@ -1,20 +1,20 @@
 <% if @comment.errors.any? %>
   alert("<%= raw @comment.errors.full_messages.join("\n") %>")
 <% else %>
-  $("#review_<%= @review.id %> .control-area").slideUp()
-  $("#review_<%= @review.id %> .new_comment textarea, #comment_image").val("")
-  $("#review_<%= @review.id %> .new_comment .name-file-upload").text("")
+  var current_review = "#review_<%= @review.id %>"
+  $(current_review + " .control-area").slideUp()
+  $(current_review + " .new_comment textarea, #comment_image").val("")
+  $(current_review + " .new_comment .name-file-upload").text("")
 
-  $("#comment_image").change(function(){
+  $(".control-area > input").change(function(){
     $(this).nextAll("p").text($(this).val())
     $(this).closest(".review").css("margin-bottom", "-15px")
   });
 
-  if($("#review_<%= @review.id %> .comment-list a[rel='next']").length === 0){
-    $("#review_<%= @review.id %> .comment-list").append("<%= j render @comment %>")
+  if($(current_review + " .comment-list a[rel='next']").length === 0){
+    $(current_review + " .comment-list").append("<%= j render @comment %>")
   }
-  $("#review_<%= @review.id %> .list-features").first().find("a").last().
+  $(current_review + " .list-features").first().find("a").last().
     text("<%= @review.comments.any? ? pluralize(@review.comments.count, t("review.comment")) :
       "#{Settings.review.zero} #{t("review.comment")}" %>")
 <% end %>
-

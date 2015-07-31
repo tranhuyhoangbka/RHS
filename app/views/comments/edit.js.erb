@@ -1,26 +1,28 @@
-$("#comment_<%= @comment.id %> .wrap-content-comment").append("<%= j render "form" %>")
-$("#edit_comment_<%= @comment.id %> #comment_image").hide()
-$("#comment_<%= @comment.id %> .list-features a").first().css("color", "#2e9fff")
-$("#edit_comment_<%= @comment.id %> img").after("<button class='cancel btn btn-default'>Cancel</button>")
-$("#edit_comment_<%= @comment.id %> .control-area").hide()
+var current_comment = "#comment_<%= @comment.id %>"
+var current_edit_form = "#edit_comment_<%= @comment.id %>"
 
-$("#edit_comment_<%= @comment.id %> textarea").focus(function(){
+$(current_comment + " .wrap-content-comment").append("<%= j render "form" %>")
+$(current_edit_form + " #comment_image, " + current_edit_form + " .control-area").hide()
+$(current_comment + " .list-features a").first().css("color", "#2e9fff")
+$(current_edit_form + " img").after("<button class='cancel btn btn-default'><%= t "comment.cancel" %></button>")
+
+$(current_edit_form + " textarea").focus(function(){
   $(this).next().slideDown()
 })
 
-$("#edit_comment_<%= @comment.id %> .control-area img").click(function(){
+$(current_edit_form + " .control-area img").click(function(){
   $(this).prev().click()
 })
 
-$("#edit_comment_<%= @comment.id %> .control-area .cancel").click(function(){
+$(current_edit_form + " .control-area .cancel").click(function(){
   $(this).closest(".edit_comment").remove()
 })
 
-$("#edit_comment_<%= @comment.id %> #comment_image").change(function(){
+$(current_edit_form + " #comment_image").change(function(){
   $(this).nextAll("p").text($(this).val())
 })
 
-$("#comment_<%= @comment.id %> .list-features a").first().click(function(){
+$(current_comment + " .list-features a").first().click(function(){
   if($(this).parent().next("form").length > 0) {
     return false
   }

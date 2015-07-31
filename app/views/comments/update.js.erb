@@ -1,6 +1,7 @@
 <% if @comment.errors.any? %>
   alert("<%= raw @comment.errors.full_messages.join("\n") %>")
 <% else %>
-  $("#comment_<%= @comment.id %>").after("<%= j render @comment %>")
-  $("#comment_<%= @comment.id %>").first().remove()
+  var $current_comment = $("#comment_<%= @comment.id %>")
+  $current_comment.after("<%= j render @comment %>")
+  $current_comment.first().remove()
 <% end %>
