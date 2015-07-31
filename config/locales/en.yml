@@ -63,6 +63,7 @@ en:
     visited_new: "Visited News"
     updated: "Address was successfully updated."
     destroy: "Address was successfully destroyed."
+    show_map: "Show Map"
     new:
       name: "Create New Address"
       button: "Create New Address"
@@ -163,6 +164,8 @@ en:
     upload_title: "Upload photo"
     comment: "Comment"
     ago: "ago"
+  comment:
+    placeholder: "Your comment"
   chat:
     show_chat_dialog: "Show chat dialog"
     hide_chat_dialog: "Hide chat dialog"

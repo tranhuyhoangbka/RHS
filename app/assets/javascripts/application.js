@@ -21,6 +21,7 @@
 //= require gmap_custom
 //= require search
 //= require review
+//= require comment
 //= require websocket_rails/main
 //= require custom_websocket
 //= require sort

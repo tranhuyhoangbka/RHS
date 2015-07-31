@@ -1,0 +1,11 @@
+<%= form_for [@review, @comment || Comment.new], remote: true do |f| %>
+  <%= f.text_area :content, placeholder: t("comment.placeholder"),
+    class: "form-control" %>
+  <div class="control-area">
+    <%= f.file_field :image %>
+    <%= image_tag Settings.review.upload_icon %>
+    <%= f.submit class: "btn btn-primary" %>
+    <p class="name-file-upload"></p>
+  </div>
+  <div class="clearfix"></div>
+<% end %>

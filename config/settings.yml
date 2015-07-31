@@ -189,3 +189,8 @@ type:
   square_big_small: "Square: Big to Small"
   capacity_low_high: "Capicity: Low to High"
   capacity_high_low: "Capicity: High to Low"
+pagination:
+  review:
+    per_page: 10
+  comment:
+    per_page: 5

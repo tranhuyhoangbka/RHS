@@ -22,13 +22,16 @@ module ApplicationHelper
   end
 
   def link_to_avatar user
-    link_to "#" do
-      image_tag user.avatar.present? ? user.avatar.url : Settings.user.avatar_default
+    link_to user_path(id: user.id) do
+            image_tag user.avatar.present? ? user.avatar.url :
+                                             Settings.user.avatar_default
     end
   end
 
   def link_to_count_comments review
-    review.comments.any? ? link_to(pluralize review.comments.size, t("review.comment"), "#")
-                         : link_to("#{Settings.review.zero} #{t('review.comment')}", "#")
+    review.comments.any? ? link_to(pluralize(review.comments.size,
+           t("review.comment")), review_comments_path(review), remote: true) :
+           link_to("#{Settings.review.zero} #{t('review.comment')}",
+           review_comments_path(review), remote: true)
   end
 end
