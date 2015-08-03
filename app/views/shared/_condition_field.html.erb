@@ -1,41 +1,45 @@
-<div class="panel panel-default" id="search-panel">
-  <div class="panel-heading">
+<div class="search">
     <div class="row">
-      <div class="col-sm-3">
-        <%= f.label :square %>
-        <%= f.collection_select :square_gteq, Settings.squares, :last, :first, {include_blank: t("search.minmum")}, {class: "form-control", id: "min_square"} %>
-        <%= f.collection_select :square_lteq, Settings.squares, :last, :first, {include_blank: t("search.maxmum")}, {class: "form-control", id: "max_square"} %>
+      <div class="col-sm-8">
+        <div class="col-sm-6">
+          <%= f.label :square %>
+          <%= f.collection_select :square_gteq, Settings.squares,
+            :last, :first, {include_blank: t("search.minimum")},
+            {class: "form-control", id: "min_square"} %><br>
+          <%= f.collection_select :square_lteq, Settings.squares,
+            :last, :first, {include_blank: t("search.maximum")},
+            {class: "form-control", id: "max_square"} %>
+        </div>
+        <div class="col-sm-6">
+          <%= f.label :price %>
+          <%= f.collection_select :price_gteq, Settings.prices,
+            :last, :first, {include_blank: t("search.minimum")},
+            {class: "form-control", id: "min_price"} %><br>
+          <%= f.collection_select :price_lteq, Settings.prices,
+            :last, :first, {include_blank: t("search.maximum")},
+            {class: "form-control", id: "max_price"} %><br>
+        </div>
       </div>
-      <div class="col-sm-3">
-        <%= f.label :price %>
-        <%= f.collection_select :price_gteq, Settings.prices, :last, :first, {include_blank: t("search.minmum")}, {class: "form-control", id: "min_price"} %>
-        <%= f.collection_select :price_lteq, Settings.prices, :last, :first, {include_blank: t("search.maxmum")}, {class: "form-control", id: "max_price"} %>
-      </div>
-      <div class="col-sm-3">
-        <%= f.label :facility %>
-        <%= f.collection_select :facility_gteq, Settings.facilities, :last, :last, {include_blank: t("search.minmum")}, {class: "form-control", id: "min_facility"} %>
-        <%= f.collection_select :facility_lteq, Settings.facilities, :last, :last, {include_blank: t("search.maxmum")}, {class: "form-control", id: "max_facility"} %>
-      </div>
-      <div class="col-sm-3">
+      <div class="col-sm-4">
         <%= f.label :region_province %>
-        <%= f.collection_select :region_province_cont, Settings.locations, :last, :last, {include_blank: t("search.region")}, {class: "form-control", id: "address"} %>
-        <div class="col-xs-6">
-          <%= f.check_box :parking_in, {class: "checkbox", id: "park1"}, 1, nil %>
-          <div id="park"><%= f.label :park %></div>
-        </div>
-        <div class="col-xs-6">
-          <%= f.check_box :parking_in, {class: "checkbox", id: "park2"}, 0, nil %>
-          <div id="none"><%= f.label :none %></div>
-        </div>
+        <%= f.collection_select :region_province_cont, Settings.locations,
+          :last, :last, {include_blank: t("search.region")},
+          {class: "form-control", id: "address"} %><br>
+        <%= link_to t("description.advance_search"), "javascript:void(0)",
+          id: "advance_search" %>
       </div>
-    </div>
-    <br />
-    <div class="row-mid">
-      <%= f.text_field :title_cont, {placeholder: t("search.title"), class: "form-control", id: "title"} %>
-      <br />
-      <div class="ad_search">
-        <%= f.submit t("api.search"), {class: "btn btn-info btn-block", id: "sumbit_search"} %>
-      </div>
-    </div>
   </div>
-</div>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="wall">
+        <%= f.text_field :description_or_title_cont, {placeholder: t("search.keyword"),
+          class: "form-control", id: "keyword"} %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <%= f.submit t("api.search"), {class: "btn btn-primary btn-block",
+        id: "sumbit_search"} %>
+    </div>
+  </div><br>
+  <%= render "searchs/advance_search", f: f %>
+</div><br>

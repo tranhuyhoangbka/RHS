@@ -3,6 +3,7 @@ class SearchsController < ApplicationController
     @search = Address.search params[:q]
 
     @addresses = []
+    @recent_addresses = Address.last Settings.num_of_recent_addresses
 
     if params[:q].reject {|k, v| v.blank?}.present?
       @sortings = Settings.sortings
