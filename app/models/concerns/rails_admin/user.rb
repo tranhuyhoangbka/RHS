@@ -21,8 +21,7 @@ module RailsAdmin::User
         field :address
         field :role, :enum do
           enum do
-            User::roles.keys
-            [["normal", "normal"], ["admin", "admin"]]
+            Settings.roles.to_hash.keys
           end
         end
       end
